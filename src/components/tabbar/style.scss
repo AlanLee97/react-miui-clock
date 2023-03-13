@@ -1,0 +1,16 @@
+.cpn--tabbar {
+  display: flex;
+  width: 100%;
+  padding: 0 2.2rem;
+
+  .tabbar-item {
+    margin-right: 2rem;
+    font-size: 2.8rem;
+    font-weight: 100;
+  }
+
+  .tabbar-item-active {
+    color: #0c84ff;
+
+  }
+}
