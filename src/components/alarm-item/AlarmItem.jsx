@@ -1,8 +1,16 @@
+import { useEffect } from 'react';
+import { onLongTap } from '../../utils/index.js';
 import './style.scss';
 
 export default function AlarmItem(props = {}) {
+
+  const handleRef = (refEl) => {
+    onLongTap(() => {
+      console.log('long tap') 
+    }, refEl)
+  }
   return (
-    <div className="cpn--alarm-item">
+    <div ref={handleRef} className="cpn--alarm-item">
       <div className="alarm-item">
         <div className="layout-left">
           <div className="alarm-time">07:00</div>

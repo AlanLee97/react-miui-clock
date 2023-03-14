@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AlarmItem from "../components/alarm-item/AlarmItem";
 import './style.scss';
 
@@ -12,7 +12,7 @@ function AddBtn(props) {
       </div>
     </div>
   )
-}
+  }
 
 export default class AlarmPage extends React.Component {
   state = {
@@ -48,6 +48,11 @@ export default class AlarmPage extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  componentDidMount() {
+
+  }
+
   render() {
     const { alarmData, restData } = this.state;
     return (
