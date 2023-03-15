@@ -20,3 +20,15 @@ export function onLongTap(cb = () => {}, el = window) {
     destroy
   }
 }
+
+export function onSwipe() {
+  const onTouchStart = e => {
+
+  }
+
+  const onTouchEnd = e => {
+    
+  }
+  window.addEventListener('touchstart', onTouchStart);
+  window.addEventListener('touchend', onTouchEnd);
+}
