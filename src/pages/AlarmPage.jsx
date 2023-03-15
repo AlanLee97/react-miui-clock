@@ -85,7 +85,7 @@ export default class AlarmPage extends React.Component {
                 {
                   alarmData.map((item, i) => (
                     <div key={item.time + '_' + i}>
-                      <AlarmItem />
+                      <AlarmItem usingSwitch={true} />
                     </div>
                   ))
                 }

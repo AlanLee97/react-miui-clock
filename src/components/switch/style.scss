@@ -1,0 +1,59 @@
+.cpn--switch {
+  .switch-bg {
+    background-color: var(--primary-color);
+    width: 4rem;
+    height: 2.4rem;
+    border-radius: 2rem;
+    position: relative;
+    transition: background-color 400ms;
+    
+
+    .switch-slide-block {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 1.2rem;
+      width: 1.2rem;
+      background-color: #fff;
+      border-radius: 1.2rem;
+      margin: auto 0;
+      z-index: 1;
+    }
+
+    .slide-on {
+      animation: slideOn 400ms;
+      animation-fill-mode:forwards;
+      left: 2rem;
+    }
+
+    .slide-off {
+      animation: slideOff 400ms;
+      animation-fill-mode:forwards;
+      left: .4rem;
+    }
+  }
+  .switch-off {
+    background-color: #eee;
+    padding-left: .4rem;
+  }
+
+  @keyframes slideOn {
+    0% {
+      left: .4rem;
+    }
+    100% {
+      left: 2.2rem;
+    }
+  }
+
+  @keyframes slideOff {
+    0% {
+      left: 2.2rem;
+    }
+    100% {
+      left: .4rem;
+      // padding-left: 0rem;
+      // animation-play-state: paused;
+    }
+  }
+}
