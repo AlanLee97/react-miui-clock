@@ -1,4 +1,5 @@
 export function onLongTap(cb = () => {}, el = window) {
+  if(!el) return;
   let start = 0;
   let end = 0;
   const onTouchStart = () => { start = Date.now(); }

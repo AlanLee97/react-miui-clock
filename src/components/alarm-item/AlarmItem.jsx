@@ -4,10 +4,16 @@ import './style.scss';
 
 export default function AlarmItem(props = {}) {
 
-  const handleRef = (refEl) => {
+  let refEl = null
+
+  useEffect(() => {
     onLongTap(() => {
-      console.log('long tap') 
+      console.log('long tap111') 
     }, refEl)
+  }, [refEl])
+
+  const handleRef = (el) => {
+    refEl = el
   }
   return (
     <div ref={handleRef} className="cpn--alarm-item">
