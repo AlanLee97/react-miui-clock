@@ -1,20 +1,20 @@
 import './App.css';
-import Tabbar from './components/tabbar/Tabbar';
-import Menubar from './components/menubar/Menubar';
-import Swiper from './components/swiper/Swiper';
-import AlarmPage from './pages/AlarmPage';
+import { useEffect } from 'react';
+import Layout from './components/layout/Layout';
+
+
 
 
 function App() {
-  const onSwiperChange = (i) => {
-    console.log('onSwiperChange', i);
-  }
+
+  useEffect(() => {
+
+  }, [])
+
+
   return (
     <div className="App">
-      <Menubar />
-      <Tabbar />
-      {/* <Swiper onChange={onSwiperChange}/> */}
-      <AlarmPage />
+      <Layout />
     </div>
   );
 }

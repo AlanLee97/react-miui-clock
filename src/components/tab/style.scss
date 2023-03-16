@@ -1,0 +1,12 @@
+.cpn--tab {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .tab-header {
+    padding-bottom: 4rem;
+  }
+  .tab-body {
+    height: 100%;
+    overflow: scroll;
+  }
+}

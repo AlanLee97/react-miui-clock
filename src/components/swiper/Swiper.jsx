@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useImperativeHandle } from "react";
 import './style.scss';
 
 let id = 0;
 
 export default function Swiper(props = {}) {
-  const [swiperProps, setSwiperProps] = useState({});
+  const { cpnRef, children } = props;
   id += 1;
+  let swiperPropsRes = null;
   const { width = '100vw', onChange = () => {} } = props;
-  const initWidth = typeof width === "number" ? width + 'px' : width
+  const initWidth = typeof width === "number" ? width + 'px' : width;
+
   const createSwiper = () => {
     let swiperWrapper = document.getElementById("swiper-wrapper_" + id); // swiper容器
     let swiper = document.getElementById("swiper_" + id); // swiper
@@ -15,23 +17,11 @@ export default function Swiper(props = {}) {
     let swiperItemCount = swiperItems.length; // swiper-item数量
     let swiperItemWidth = swiperWrapper.offsetWidth; // 单个swiper-item的宽度
 
-    // swiper.style.width = typeof width === "number" ? width + 'px' : width
-
     let swiperWidth = swiperWrapper.offsetWidth * swiperItems.length; // 整个swiper的宽度
     let swiperWidthStyle = `width: ${swiperWidth}px; `; // swiper宽度样式变量
     swiper.style = swiperWidthStyle; // 设置整个swiper的宽度
     let rightBound = swiperWrapper.offsetWidth * (swiperItems.length - 1); // 右边界（最后一个swiper-item的起始位置）
     let slideThreshold = swiperItemWidth / 4; // 滑动切换的阈值，这里取swiper-item宽度的1/4
-
-    // setSwiperProps({
-    //   swiperWrapper,
-    //   swiper,
-    //   swiperItems,
-    //   swiperItemCount,
-    //   swiperItemWidth,
-    //   swiperWidth,
-    //   swiperWidthStyle,
-    // });
 
     let start = 0; // 触摸起始点
     let moveX = 0; // 元素需移动的距离
@@ -66,6 +56,7 @@ export default function Swiper(props = {}) {
     swiper.ontouchmove = (e) => {
       // 设置滑动的距离
       moveDistance = e.changedTouches[0].pageX - start;
+      if(Math.abs(moveDistance) < 50) return;
       // 重新设置滑动的距离
       moveX = isMoved ? lastMove + moveDistance : moveDistance;
       // 改变元素的位置
@@ -138,36 +129,31 @@ export default function Swiper(props = {}) {
     }
   };
 
-  let refEl = null
-  let swiperPropsRes = null;
   useEffect(() => {
     swiperPropsRes = createSwiper();
-  }, [refEl])
+  }, [])
 
-  const onClick = () => {
-    console.log('refEl', refEl);
-    console.log('swiperPropsRes', swiperPropsRes);
+  useImperativeHandle(cpnRef, () => ({
+    setCurrentIndex
+  }))
 
-    let moveX = -780;
-    // console.log('initWidth', initWidth);
-    refEl.style = `${swiperPropsRes.swiperWidthStyle} transform: translateX(${moveX}px); transition: transform 600ms;`;
-    // console.log('swiperProps', swiperProps);
+  const setCurrentIndex = (i) => {
+    let moveX = -(i * swiperPropsRes.swiperItemWidth);
+    swiperPropsRes.swiper.style = `${swiperPropsRes.swiperWidthStyle} transform: translateX(${moveX}px); transition: transform 600ms;`;
   }
 
   return (
-    <div className="cpn--swiper" onClick={onClick}>
-      <div ref={el => {refEl = el;}} id={"swiper-wrapper_" + id} className="swiper-wrapper" style={{width: initWidth}}>
+    <div className="cpn--swiper" ref={cpnRef}>
+      <div id={"swiper-wrapper_" + id} className="swiper-wrapper" style={{width: initWidth}}>
         <div className="swiper" id={"swiper_" + id}>
-          <div className="swiper-item">1</div>
-          <div className="swiper-item bg-color-2">2</div>
-          <div className="swiper-item">3</div>
-          <div className="swiper-item bg-color-2">4</div>
-          <div className="swiper-item">5</div>
-          <div className="swiper-item bg-color-2">6</div>
-          <div className="swiper-item">7</div>
+          {
+            children.map((item, i) => (
+              <div className="swiper-item" key={'swiper-item-' + i}>{item}</div>
+            ))
+          }
         </div>
 
-        <div className="indicator-wrapper" id={"indicator-wrapper_" + id}></div>
+        {/* <div className="indicator-wrapper" id={"indicator-wrapper_" + id}></div> */}
       </div>
     </div>
   );

@@ -1,0 +1,24 @@
+.cpn--add-btn {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to top, #fff 40%, #ffffff00);
+
+  .icon-wrapper {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 999rem;
+    width: 5.6rem;
+    height: 5.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0rem .4rem 2rem var(--primary-color-01);
+    margin-bottom: 4.6rem;
+  }
+}
