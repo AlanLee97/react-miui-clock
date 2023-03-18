@@ -19,5 +19,9 @@ html {
   --primary-color: #0c84ff;
   --primary-color-05: #0c84ff88;
   --primary-color-01: #0c84ff22;
-  --text-color-second: #00000099;
+  --text-color-second: #00000088;
+
+  --item-border-radius: 2rem;
+  --item-padding: 1.8rem;
+  --item-margin-bottom: 1.2rem;
 }

@@ -1,0 +1,43 @@
+.cpn--clock-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: var(--item-padding);
+  border-radius: var(--item-border-radius);
+  margin-bottom: var(--item-margin-bottom);
+
+  .layout-left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .time {
+      font-size: 3.2rem;
+    }
+    .location {
+      font-size: 1.6rem;
+      margin-left: 1rem;
+      align-self: flex-end;
+    }
+    .time-location-wrapper {
+      display: flex;
+    }
+
+    .date-and-gap {
+      margin-top: .4rem;
+      color: var(--text-color-second);
+      font-size: 1.4rem;
+    }
+  }
+
+  .layout-right {
+    display: flex;
+    max-width: calc(100% / 4);
+  }
+
+  .row-wrapper {
+    display: flex;
+    align-items: center;
+  }
+}

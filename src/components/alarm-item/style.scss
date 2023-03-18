@@ -1,10 +1,10 @@
 .cpn--alarm-item {
-  margin-bottom: 1.2rem;
+  margin-bottom: var(--item-margin-bottom);
 
   .alarm-item {
     background-color: #fff;
-    border-radius: 2rem;
-    padding: 1.8rem;
+    border-radius: var(--item-border-radius);
+    padding: var(--item-padding);
     width: 100%;
     display: flex;
     flex: 1;
