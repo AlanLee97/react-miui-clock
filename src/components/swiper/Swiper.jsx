@@ -30,6 +30,10 @@ export default function Swiper(props = {}) {
     let isMoved = false; // 标记是否移动过
     let currntItemIndex = 0; // 当前是第几个item
 
+    const setMoveX = (val) => {
+      moveX = val;
+    }
+
 
     // 创建指示点
     const createIndicator = () => {
@@ -47,13 +51,13 @@ export default function Swiper(props = {}) {
     // 创建指示点
     // createIndicator();
 
-    swiper.ontouchstart = (e) => {
+    const onTouchstart = (e) => {
       start = e.changedTouches[0].pageX;
       // 拿到上次滑动的距离
       lastMove = moveX;
     };
 
-    swiper.ontouchmove = (e) => {
+    const onTouchmove = (e) => {
       // 设置滑动的距离
       moveDistance = e.changedTouches[0].pageX - start;
       if(Math.abs(moveDistance) < 50) return;
@@ -65,7 +69,8 @@ export default function Swiper(props = {}) {
       isMoved = true;
     };
 
-    swiper.ontouchend = (e) => {
+    const onTouchend = (e) => {
+      if(Math.abs(moveX) < 50) return;
       // 处理左边界
       if (moveX > 0) {
         moveX = 0;
@@ -114,9 +119,11 @@ export default function Swiper(props = {}) {
       }
 
       onChange(currntItemIndex)
-
-      
     };
+
+    swiper.addEventListener('touchstart', onTouchstart);
+    swiper.addEventListener('touchmove', onTouchmove);
+    swiper.addEventListener('touchend', onTouchend);
 
     return {
       swiperWrapper,
@@ -126,11 +133,24 @@ export default function Swiper(props = {}) {
       swiperItemWidth,
       swiperWidth,
       swiperWidthStyle,
+      onTouchstart,
+      onTouchmove,
+      onTouchend,
+      setMoveX
     }
   };
 
   useEffect(() => {
     swiperPropsRes = createSwiper();
+
+    return function destroy() {
+      let swiper = swiperPropsRes.swiper;
+      if(swiper) {
+        swiper.removeEventListener('touchstart', swiperPropsRes.onTouchstart);
+        swiper.removeEventListener('touchmove', swiperPropsRes.onTouchmove);
+        swiper.removeEventListener('touchend', swiperPropsRes.onTouchend);
+      }
+    }
   }, [])
 
   useImperativeHandle(cpnRef, () => ({
@@ -140,6 +160,7 @@ export default function Swiper(props = {}) {
   const setCurrentIndex = (i) => {
     let moveX = -(i * swiperPropsRes.swiperItemWidth);
     swiperPropsRes.swiper.style = `${swiperPropsRes.swiperWidthStyle} transform: translateX(${moveX}px); transition: transform 600ms;`;
+    swiperPropsRes.setMoveX(0);
   }
 
   return (
