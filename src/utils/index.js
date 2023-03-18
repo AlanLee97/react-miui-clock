@@ -32,3 +32,10 @@ export function onSwipe() {
   window.addEventListener('touchstart', onTouchStart);
   window.addEventListener('touchend', onTouchEnd);
 }
+
+export function appendZero(num = 0) {
+  if(+num < 10) {
+    num = '0' + num;
+  }
+  return num;
+}

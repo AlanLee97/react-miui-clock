@@ -1,0 +1,16 @@
+.cpn--display-time {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .primary-time {
+    font-size: 4.4rem;
+  }
+
+  .local-date {
+    color: var(--text-color-second);
+    margin-top: .6rem;
+  }
+}
