@@ -24,4 +24,5 @@ html {
   --item-border-radius: 2rem;
   --item-padding: 1.8rem;
   --item-margin-bottom: 1.2rem;
+  --font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
 }
