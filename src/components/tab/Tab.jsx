@@ -2,6 +2,7 @@ import { forwardRef, useRef } from 'react';
 import Swiper from '../swiper/Swiper';
 import Tabbar from '../tabbar/Tabbar';
 import './style.scss';
+import eventbus from '../../utils/eventbus';
 
 export default function Tab(props = {}) {
   const { children } = props;
@@ -12,10 +13,12 @@ export default function Tab(props = {}) {
 
   const onSwiperChange = (i) => {
     tabbarRef.current.setCurrentIndex(i);
+    eventbus.emit('tab:change', i);
   }
 
   const onTabbarChange = (i) => {
     swiperRef.current.setCurrentIndex(i);
+    eventbus.emit('tab:change', i);
   }
 
   return (

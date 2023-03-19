@@ -9,6 +9,14 @@
   justify-content: center;
   background-image: linear-gradient(to top, #fff 40%, #ffffff00);
 
+  .icon-row-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+  }
+
   .icon-wrapper {
     background-color: #fff;
     padding: 1rem;
@@ -19,6 +27,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0rem .4rem 2rem var(--primary-color-01);
+    margin: auto;
     margin-bottom: 4.6rem;
   }
 }
