@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './counterReducer';
+import tabbarReducer from './tabbarReducer';
 
 export default configureStore({
-  reducer: counterReducer
+  reducer: {
+    tabbar: tabbarReducer
+  }
 })
