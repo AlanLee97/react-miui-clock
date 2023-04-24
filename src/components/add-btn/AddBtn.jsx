@@ -20,6 +20,19 @@ export default function AddBtn(props = {}) {
   }, [])
 
   const onClickStart = () => {
+    console.log('onClickStart currentTabIndex', currentTabIndex);
+    if(currentTabIndex === 3) { // 计时Tab
+
+      if(status === STATUS_UNSTARTED || status === STATUS_PAUSED) {
+        eventbus.emit('timer:start');
+      }
+      if(status === STATUS_STARTED) {
+        eventbus.emit('timer:pause');
+        setStatus(STATUS_PAUSED);
+      }
+      setStatus(STATUS_STARTED);
+      return 
+    }
     if(status === STATUS_UNSTARTED || status === STATUS_PAUSED) {
       eventbus.emit('seconder:start');
       setStatus(STATUS_STARTED);

@@ -43,6 +43,10 @@
   height: 100%;
   overflow: scroll;
 
+  .hide {
+    display: none !important;
+  }
+
   .time-selector-wrapper {
     display: flex;
     justify-content: center;
@@ -51,6 +55,18 @@
     .middle-item {
       border-left: 1px solid #eee;
       border-right: 1px solid #eee;
+    }
+  }
+
+  .time-start-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+    .circle {
+      width: 70vw;
+      height: 70vw;
+      border-radius: 50%;
+      border: 20px solid var(--primary-color);
     }
   }
 }
