@@ -26,3 +26,7 @@ html {
   --item-margin-bottom: 1.2rem;
   --font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
 }
+
+.hide {
+  display: none !important;
+}

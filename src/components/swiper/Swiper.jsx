@@ -1,12 +1,13 @@
-import { useEffect, useImperativeHandle } from "react";
+import { useState, useEffect, useImperativeHandle } from "react";
 import './style.scss';
 
 let id = 0;
 
 export default function Swiper(props = {}) {
   const { cpnRef, children } = props;
+  const [curSwiperItem, setCurSwiperItem] = useState(0)
   id += 1;
-  let swiperPropsRes = null;
+  let [swiperPropsRes, setSwiperPropsRes] = useState(null);
   const { width = '100vw', onChange = () => {} } = props;
   const initWidth = typeof width === "number" ? width + 'px' : width;
 
@@ -119,6 +120,9 @@ export default function Swiper(props = {}) {
       }
 
       onChange(currntItemIndex)
+      setCurSwiperItem(currntItemIndex)
+
+      console.log('swiper change', currntItemIndex);
     };
 
     swiper.addEventListener('touchstart', onTouchstart);
@@ -141,11 +145,11 @@ export default function Swiper(props = {}) {
   };
 
   useEffect(() => {
-    swiperPropsRes = createSwiper();
+    setSwiperPropsRes(createSwiper())
 
     return function destroy() {
-      let swiper = swiperPropsRes.swiper;
-      if(swiper) {
+      if(swiperPropsRes && swiperPropsRes.swiper) {
+        let swiper = swiperPropsRes.swiper;
         swiper.removeEventListener('touchstart', swiperPropsRes.onTouchstart);
         swiper.removeEventListener('touchmove', swiperPropsRes.onTouchmove);
         swiper.removeEventListener('touchend', swiperPropsRes.onTouchend);
@@ -154,13 +158,15 @@ export default function Swiper(props = {}) {
   }, [])
 
   useImperativeHandle(cpnRef, () => ({
-    setCurrentIndex
+    setCurrentIndex,
+    curSwiperItem,
   }))
 
   const setCurrentIndex = (i) => {
     let moveX = -(i * swiperPropsRes.swiperItemWidth);
     swiperPropsRes.swiper.style = `${swiperPropsRes.swiperWidthStyle} transform: translateX(${moveX}px); transition: transform 600ms;`;
     swiperPropsRes.setMoveX(0);
+    setCurSwiperItem(i);
   }
 
   return (

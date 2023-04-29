@@ -1,29 +1,52 @@
 import React from "react";
 import NumberSlideSelector from "../components/number-slide-selector/NumberSlideSelector";
-import Timer from "../components/timer/Timer";
+import CountDown from "../components/count-down/CountDown";
 import eventbus from '../utils/eventbus';
 import './style.scss';
 
 export default class TimerPage extends React.Component {
 
   state = {
-    timeStartMode: true
+    timeStartMode: false,
+    opt: ''
   }
 
   constructor(props = {}) {
     super(props);
 
-    eventbus.on('timer:start', () => {
+    eventbus.on('timer:started', () => {
       this.setState({
         timeStartMode: true
       })
-      console.log('timer:start');
+      console.log('timer:started');
     })
-    eventbus.on('timer:pause', () => {
+    eventbus.on('timer:unstarted', () => {
       this.setState({
-        timeStartMode: false
+        timeStartMode: false,
+        opt: 'stop'
+      })
+      console.log('timer:unstarted');
+    })
+
+    eventbus.on('timer:opt:pause', () => {
+      this.setState({
+        opt: 'pause'
       })
       console.log('timer:pause');
+    })
+
+    eventbus.on('timer:opt:reset', () => {
+      this.setState({
+        opt: 'reset'
+      })
+      console.log('timer:reset');
+    })
+
+    eventbus.on('timer:opt:start', () => {
+      this.setState({
+        opt: 'start'
+      })
+      console.log('timer:start');
     })
   }
 
@@ -47,7 +70,7 @@ export default class TimerPage extends React.Component {
   }
 
   render() {
-    const { timeStartMode } = this.state;
+    const { timeStartMode, opt } = this.state;
     return (
       <div className="page--timer">
         <section className={this.setClassName(["time-selector-wrapper", timeStartMode ? 'hide' : ''])}>
@@ -65,7 +88,7 @@ export default class TimerPage extends React.Component {
         {
           timeStartMode && (
             <section className="time-start-wrapper">
-              <Timer />
+              <CountDown hour={1} min={2} sec={30} opt={opt} />
             </section>
           )
         }

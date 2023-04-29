@@ -39,3 +39,15 @@ export function appendZero(num = 0) {
   }
   return num;
 }
+
+export function showEl(el) {
+  
+}
+
+export function className(name = '') {
+  if(Array.isArray(name)) {
+    return name.join(' ').trim()
+  }
+
+  return name
+}
