@@ -1,0 +1,24 @@
+.cpn--timer {
+  .clock-outline {
+    width: 70vw;
+    height: 70vw;
+    border-radius: 50%;
+    border: 10px solid var(--primary-color);
+    position: relative;
+
+    .clock-inner {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+  }
+}

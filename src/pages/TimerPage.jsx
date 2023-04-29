@@ -1,12 +1,13 @@
 import React from "react";
 import NumberSlideSelector from "../components/number-slide-selector/NumberSlideSelector";
+import Timer from "../components/timer/Timer";
 import eventbus from '../utils/eventbus';
 import './style.scss';
 
 export default class TimerPage extends React.Component {
 
   state = {
-    timeStartMode: false
+    timeStartMode: true
   }
 
   constructor(props = {}) {
@@ -61,9 +62,13 @@ export default class TimerPage extends React.Component {
           </div>
         </section>
 
-        <section className={this.setClassName(["time-start-wrapper", timeStartMode ? '' : 'hide'])}>
-          <div className="circle"></div>
-        </section>
+        {
+          timeStartMode && (
+            <section className="time-start-wrapper">
+              <Timer />
+            </section>
+          )
+        }
       </div>
     )
   }
