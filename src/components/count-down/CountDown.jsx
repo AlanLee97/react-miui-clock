@@ -25,6 +25,7 @@ export default function CountDown(props = {}) {
     if(props.opt === 'reset') {
       reset()
     }
+    return destroy;
   })
 
   useEffect(() => {
@@ -75,9 +76,9 @@ export default function CountDown(props = {}) {
 
   return (
     <div className="cpn--count-down">
-      <button onClick={start}>start</button>
+      {/* <button onClick={start}>start</button>
       <button onClick={stop}>stop</button>
-      <button onClick={reset}>reset</button>
+      <button onClick={reset}>reset</button> */}
       <div className='clock-outline'>
         <div className='clock-inner'>{appendZero(hour)}:{appendZero(min)}:{appendZero(sec)}</div>
       </div>

@@ -8,7 +8,14 @@ export default class TimerPage extends React.Component {
 
   state = {
     timeStartMode: false,
-    opt: ''
+    opt: '',
+    timeData: {
+      hour: 0,
+      min: 0,
+      sec: 0,
+    },
+    refresh: false
+
   }
 
   constructor(props = {}) {
@@ -37,7 +44,17 @@ export default class TimerPage extends React.Component {
 
     eventbus.on('timer:opt:reset', () => {
       this.setState({
-        opt: 'reset'
+        opt: 'reset',
+        timeData: {
+          hour: 0,
+          min: 0,
+          sec: 0
+        },
+        refresh: true
+      }, () => {
+        this.setState({
+          refresh: false
+        })
       })
       console.log('timer:reset');
     })
@@ -52,14 +69,32 @@ export default class TimerPage extends React.Component {
 
   onSelectedHour = val => {
     console.log('onSelectedHour', val);
+    this.setState({
+      timeData: {
+        ...this.state.timeData,
+        hour: +val
+      }
+    })
   }
 
   onSelectedMin = val => {
     console.log('onSelectedMin', val);
+    this.setState({
+      timeData: {
+        ...this.state.timeData,
+        min: +val
+      }
+    })
   }
 
   onSelectedSec = val => {
     console.log('onSelectedSec', val);
+    this.setState({
+      timeData: {
+        ...this.state.timeData,
+        sec: +val
+      }
+    })
   }
 
   setClassName = (name = '') => {
@@ -70,25 +105,27 @@ export default class TimerPage extends React.Component {
   }
 
   render() {
-    const { timeStartMode, opt } = this.state;
+    const { timeStartMode, opt, timeData, refresh } = this.state;
+    console.log('timeData', timeData);
     return (
       <div className="page--timer">
+        { !refresh &&
         <section className={this.setClassName(["time-selector-wrapper", timeStartMode ? 'hide' : ''])}>
           <div className="single-time-selector-wrapper">
-            <NumberSlideSelector start={0} end={23} unit={'时'} onSelected={this.onSelectedHour} />
+            <NumberSlideSelector current={0} start={0} end={23} unit={'时'} onSelected={this.onSelectedHour} />
           </div>
           <div className="single-time-selector-wrapper middle-item">
-            <NumberSlideSelector start={0} end={59} unit={'分'} onSelected={this.onSelectedMin} />
+            <NumberSlideSelector current={0} start={0} end={59} unit={'分'} onSelected={this.onSelectedMin} />
           </div>
           <div className="single-time-selector-wrapper">
-            <NumberSlideSelector start={0} end={59} unit={'秒'} onSelected={this.onSelectedSec} />
+            <NumberSlideSelector current={0} start={0} end={59} unit={'秒'} onSelected={this.onSelectedSec} />
           </div>
         </section>
-
+        }
         {
           timeStartMode && (
             <section className="time-start-wrapper">
-              <CountDown hour={1} min={2} sec={30} opt={opt} />
+              <CountDown hour={timeData.hour} min={timeData.min} sec={timeData.sec} opt={opt} />
             </section>
           )
         }
