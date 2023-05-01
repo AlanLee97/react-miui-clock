@@ -1,3 +1,13 @@
+.page-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+}
+
+
 .page--alarm {
   padding: 0 1.2rem;
   position: relative;
@@ -62,5 +72,121 @@
     display: flex;
     justify-content: center;
     margin-top: 6rem;
+  }
+}
+
+.page--add-alarm {
+  padding: 0 1.2rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: #fff;
+
+  .small-title {
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    color: #aaa;
+    margin-left: 1.2rem;
+  }
+
+  .cpn--header {
+    .header-row {
+      display: flex;
+      align-items: center;
+      height: 8rem;
+      width: 100%;
+      padding: 0 2rem;
+
+      .center {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .header-title {
+          font-size: 1.6rem;
+          font-weight: bold;
+        }
+      }
+
+      .left {
+        flex: 1;
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .cpn--timer-selector {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+
+    .divider {
+      // height: 30rem;
+      width: 1px;
+      background-color: #eee;
+      align-self: stretch;
+      margin: 0 2rem;
+    }
+  }
+
+  .cpn--ringtone-selector {
+    margin-top: 2rem;
+    padding: 0 1.2rem;
+
+    .ringtone-selector {
+      display: flex;
+      justify-content: space-between;
+
+      .select-box-wrapper {
+        width: 10rem;
+        height: 10rem;
+        border-radius: .8rem;
+        border: 1px solid red;
+        padding: .4rem;
+
+        .select-box {
+          width: 100%;
+          height: 100%;
+          background-color: aqua;
+          border-radius: .8rem;
+          display: flex;
+          flex-direction: column;
+
+          .icon-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .box-bottom {
+            flex: 1;
+            display: flex;
+            // align-items: center;
+            // justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+            .small-icon-wrapper {
+              background-color: #ffffff88;
+              width: 1.8rem;
+              height: 1.8rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 100rem;
+            }
+          }
+        }
+      }
+    }
   }
 }

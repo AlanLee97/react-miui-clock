@@ -47,7 +47,8 @@
     justify-content: center;
     font-size: 1.6rem;
     padding: 0 .6rem;
-    z-index: -1;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .cover-top {

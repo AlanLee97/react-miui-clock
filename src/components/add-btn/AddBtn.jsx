@@ -1,6 +1,7 @@
 import "./style.scss";
 import eventbus from "../../utils/eventbus";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const STATUS_STARTED = "started";
 const STATUS_PAUSED = "paused";
@@ -144,7 +145,14 @@ export default function AddBtn(props = {}) {
     };
   }, []);
 
+  const navigate = useNavigate();
+
   const onClick = status => {
+    if(currentTabIndex === 0) {
+      console.log('currentTabIndex', currentTabIndex);
+      navigate('/add-alarm');
+      return;
+    }
     // 计时Tab
     if (currentTabIndex === 3) { 
       if (status === STATUS_UNSTARTED) {
@@ -208,7 +216,7 @@ export default function AddBtn(props = {}) {
       </div> */}
 
       { // 闹钟页面
-        currentTabIndex === 0 && <IconAdd />
+        currentTabIndex === 0 && <IconAdd onClick={onClick} />
       }
 
       { // 时钟页面
