@@ -153,6 +153,11 @@ export default function AddBtn(props = {}) {
       navigate('/add-alarm');
       return;
     }
+    if(currentTabIndex === 1) {
+      console.log('currentTabIndex', currentTabIndex);
+      navigate('/select-city');
+      return;
+    }
     // 计时Tab
     if (currentTabIndex === 3) { 
       if (status === STATUS_UNSTARTED) {
@@ -220,7 +225,7 @@ export default function AddBtn(props = {}) {
       }
 
       { // 时钟页面
-        currentTabIndex === 1 && <IconAdd />
+        currentTabIndex === 1 && <IconAdd onClick={onClick} />
       }
 
       {
