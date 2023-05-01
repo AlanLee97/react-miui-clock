@@ -1,5 +1,6 @@
 import React from "react";
 import NumberSlideSelector from "../components/number-slide-selector/NumberSlideSelector";
+import Swiper from '../components/swiper/Swiper';
 import "./style.scss";
 
 function Header(props = {}) {
@@ -117,10 +118,16 @@ export default class AddAlarmPage extends React.Component {
     return (
       <div className="page-wrapper">
         <div className="page--add-alarm">
-          <Header />
+          {/* <Header />
           <TimerSelector />
           <RingtoneSelector />
-          <OtherSetting />
+          <OtherSetting /> */}
+          <Swiper>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+          </Swiper>
         </div>
       </div>
     );

@@ -190,7 +190,7 @@ function Swiper0(props = {}) {
 }
 
 export default function SwiperCpn(props = {}) {
-  const {children = [], cpnRef} = props;
+  const {children = [], cpnRef = {}} = props;
   return (
     <Swiper onSwiper={ins => {cpnRef.current = ins}} className="mySwiper" onSlideChange={props.onChange}>
       {
