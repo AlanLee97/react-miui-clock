@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   background-image: linear-gradient(to top, #fff 40%, #ffffff00);
+  z-index: 9999;
 
   .icon-row-wrapper {
     display: flex;
