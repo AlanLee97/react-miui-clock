@@ -8,6 +8,7 @@ import StopWatchPage from '../../pages/StopWatchPage';
 import TimerPage from '../../pages/TimerPage';
 import { useState, useEffect } from 'react';
 import eventbus from '../../utils/eventbus';
+import { useLocation, useMatches, useNavigation, useRoutes } from 'react-router-dom';
 
 
 export default function Layout(props = {}) {
@@ -23,6 +24,10 @@ export default function Layout(props = {}) {
     console.log('curTab', curTab);
   }, [curTab])
 
+  // const navigation = useNavigation();
+  const location = useLocation()
+  console.log('location', location);
+
   return (
     <div className="cpn--layout">
       <div className='menubar-wrapper'>
@@ -36,10 +41,17 @@ export default function Layout(props = {}) {
           <TimerPage />
         </Tab>
       </div>
-      <AddBtn type={0} hide={0 !== curTab} />
-      <AddBtn type={1} hide={1 !== curTab} />
-      <AddBtn type={2} hide={2 !== curTab} />
-      <AddBtn type={3} hide={3 !== curTab} />
+      {
+        location.pathname === '/' && (
+          <>
+            <AddBtn type={0} hide={0 !== curTab} />
+            <AddBtn type={1} hide={1 !== curTab} />
+            <AddBtn type={2} hide={2 !== curTab} />
+            <AddBtn type={3} hide={3 !== curTab} />
+          </>
+        )
+      }
+
     </div>
   )
 }

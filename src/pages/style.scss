@@ -90,6 +90,17 @@
     margin-left: 1.2rem;
   }
 
+  .cpn--module-box {
+    margin-bottom: 2rem;
+
+    .split-line {
+      height: 1px;
+      width: 100%;
+      background-color: #eee;
+      margin: 2rem 0;
+    }
+  }
+
   .cpn--header {
     .header-row {
       display: flex;
@@ -144,19 +155,36 @@
     .ringtone-selector {
       display: flex;
       justify-content: space-between;
+      padding: 0 1.2rem;
 
+      .select-box-wrapper-active {
+        border: 2px solid var(--primary-color) !important;
+      }
       .select-box-wrapper {
-        width: 10rem;
+        width: calc(100% / 3 - 0.5rem);
         height: 10rem;
-        border-radius: .8rem;
-        border: 1px solid red;
+        border: 2px solid transparent;
+        border-radius: 1.6rem;
         padding: .4rem;
 
+        .weather-box {
+          background-image: linear-gradient(to bottom left, #4481eb 0%, #04befe 100%);
+        }
+
+        .el-box {
+          background-image: linear-gradient(to top right, #ffc271 0%, #ff9a44 100%);
+        }
+
+        .more-box {
+          background-image: linear-gradient(-225deg, #B19FFF 48%, #B19FFF 100%);
+        }
+
         .select-box {
+          color: #fff;
           width: 100%;
           height: 100%;
           background-color: aqua;
-          border-radius: .8rem;
+          border-radius: 1.6rem;
           display: flex;
           flex-direction: column;
 
@@ -183,9 +211,50 @@
               align-items: center;
               justify-content: center;
               border-radius: 100rem;
+              margin-top: .2rem;
             }
           }
         }
+      }
+    }
+  }
+
+  .cpn--other-setting {
+    margin-top: 2rem;
+    padding: 0 1.2rem;
+
+    .setting-item-wrapper {
+      .setting-item {
+        width: 100%;
+        min-height: 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.2rem;
+
+        .setting-item-title {
+          font-size: 1.6rem;
+          font-weight: bold;
+        }
+
+        .setting-item-content {
+          display: flex;
+          align-items: center;
+          font-size: 1.4rem;
+          color: #00000066;
+
+          .icon-wrapper {
+            height: 100%;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+
+      .fake-input-box {
+        background-color: #eee;
+        border-radius: 2rem;
       }
     }
   }
