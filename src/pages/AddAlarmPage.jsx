@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import NumberSlideSelector from "../components/number-slide-selector/NumberSlideSelector";
-import Switch from "../components/switch/Switch";
+import {
+  NumberSlideSelector,
+  Switch
+} from "../components";
 import { className } from "../utils";
 import "./style.scss";
 

@@ -1,7 +1,9 @@
-import './style.scss';
 import {useNavigate} from 'react-router-dom';
-import Switch from '../switch/Switch';
-import NumberSlideSelector from '../number-slide-selector/NumberSlideSelector';
+import {
+  Switch,
+  NumberSlideSelector
+} from '../index';
+import './style.scss';
 
 export default function TimeSettingPanel(props = {}) {
   const {onComplete = () => {}} = props;

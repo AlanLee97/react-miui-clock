@@ -1,6 +1,8 @@
 import React from "react";
-import ClockItem from "../components/clock-item/ClockItem";
-import DisplayTime from "../components/display-time/DisplayTime";
+import {
+  ClockItem,
+  DisplayTime
+} from "../components";
 import './style.scss';
 
 export default class ClockPage extends React.Component {

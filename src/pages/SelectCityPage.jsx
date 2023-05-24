@@ -1,5 +1,7 @@
 import React from "react";
-import Swiper from '../components/swiper/Swiper';
+import {
+  Swiper
+} from '../components';
 import AlarmPage from './AlarmPage';
 import ClockPage from './ClockPage';
 import StopWatchPage from './StopWatchPage';

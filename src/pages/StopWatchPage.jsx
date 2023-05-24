@@ -1,5 +1,7 @@
 import React, { forwardRef } from "react";
-import Seconder from "../components/seconder/Seconder";
+import {
+  Seconder
+} from "../components";
 import eventbus from "../utils/eventbus";
 import './style.scss';
 

@@ -1,6 +1,8 @@
 import React from "react";
-import NumberSlideSelector from "../components/number-slide-selector/NumberSlideSelector";
-import CountDown from "../components/count-down/CountDown";
+import {
+  NumberSlideSelector,
+  CountDown
+} from "../components";
 import eventbus from '../utils/eventbus';
 import './style.scss';
 

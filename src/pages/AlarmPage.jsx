@@ -1,7 +1,9 @@
 import React from "react";
-import AlarmItem from "../components/alarm-item/AlarmItem";
-import Mask from "../components/mask/Mask";
-import TimeSettingPanel from "../components/time-setting-panel/TimeSettingPanel";
+import {
+  AlarmItem,
+  Mask,
+  TimeSettingPanel
+} from "../components";
 import './style.scss';
 
 export default class AlarmPage extends React.Component {
