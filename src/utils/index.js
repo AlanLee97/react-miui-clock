@@ -51,3 +51,5 @@ export function className(name = '') {
 
   return name
 }
+
+window.className = className

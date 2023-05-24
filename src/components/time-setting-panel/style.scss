@@ -1,0 +1,19 @@
+.cpn--time-setting-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .panel-content {
+    position: absolute;
+    width: 90%;
+    padding: 1.6rem;
+    height: fit-content;
+    background-color: #fff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 1.6rem;
+  }
+}

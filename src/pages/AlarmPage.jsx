@@ -1,8 +1,12 @@
 import React from "react";
 import AlarmItem from "../components/alarm-item/AlarmItem";
+import Mask from "../components/mask/Mask";
+import TimeSettingPanel from "../components/time-setting-panel/TimeSettingPanel";
 import './style.scss';
+
 export default class AlarmPage extends React.Component {
   state = {
+    showMask: false,
     alarmData: [
       {
         time: '07:00',
@@ -52,11 +56,23 @@ export default class AlarmPage extends React.Component {
 
   }
 
+  onClickItem = () => {
+    this.setMaskVisible(true)
+  }
+
+  setMaskVisible = (visible) => {
+    this.setState({
+      showMask: visible
+    })
+  }
+
   render() {
-    const { alarmData, restData } = this.state;
+    const { alarmData, restData, showMask } = this.state;
     return (
       <div className="page--alarm">
-
+        <Mask show={showMask} closeOnMask={true} setVisible={this.setMaskVisible}>
+          <TimeSettingPanel></TimeSettingPanel>
+        </Mask>
 
         <div className="group">
           <div className="group-title">作息</div>
@@ -65,7 +81,7 @@ export default class AlarmPage extends React.Component {
               <div className="rest-data">
                 {
                   restData.map((item, i) => (
-                    <div key={item.time + '_' + i}>
+                    <div key={item.time + '_' + i} onClick={this.onClickItem}>
                       <AlarmItem />
                     </div>
                   ))
@@ -82,7 +98,7 @@ export default class AlarmPage extends React.Component {
               <div className="alarm-data">
                 {
                   alarmData.map((item, i) => (
-                    <div key={item.time + '_' + i}>
+                    <div key={item.time + '_' + i} onClick={this.onClickItem}>
                       <AlarmItem usingSwitch={true} />
                     </div>
                   ))
@@ -91,8 +107,6 @@ export default class AlarmPage extends React.Component {
             ) : null
           }
         </div>
-
-
       </div>
     )
   }
