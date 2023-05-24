@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import NumberSlideSelector from "../components/number-slide-selector/NumberSlideSelector";
 import Switch from "../components/switch/Switch";
 import { className } from "../utils";
@@ -21,6 +21,8 @@ function ModuleBox(props = {}) {
 
 function Header(props = {}) {
   const navigate = useNavigate();
+  const location = useLocation();
+  const editMode = location.state?.mode;
   const back = () => {
     navigate('/');
   }
@@ -55,7 +57,7 @@ function Header(props = {}) {
           </svg>
         </div>
         <div className="center">
-          <div className="header-title">添加闹钟</div>
+          <div className="header-title">{editMode ? '编辑' : '添加'}闹钟</div>
           <div>23小时22分钟后响铃</div>
         </div>
         <div className="right">

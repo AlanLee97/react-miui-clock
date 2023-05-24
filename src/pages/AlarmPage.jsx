@@ -66,12 +66,16 @@ export default class AlarmPage extends React.Component {
     })
   }
 
+  onTimeSettingComplete = () => {
+    this.setMaskVisible(false)
+  }
+
   render() {
     const { alarmData, restData, showMask } = this.state;
     return (
       <div className="page--alarm">
         <Mask show={showMask} closeOnMask={true} setVisible={this.setMaskVisible}>
-          <TimeSettingPanel></TimeSettingPanel>
+          <TimeSettingPanel onComplete={this.onTimeSettingComplete}></TimeSettingPanel>
         </Mask>
 
         <div className="group">

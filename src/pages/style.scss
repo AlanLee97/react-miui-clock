@@ -146,6 +146,15 @@
       align-self: stretch;
       margin: 0 2rem;
     }
+
+    .cpn--number-slide-selector {
+      .cover-top {
+        background-image: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
+      }
+      .cover-bottom {
+        background-image: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+      }
+    }
   }
 
   .cpn--ringtone-selector {
