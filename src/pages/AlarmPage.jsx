@@ -6,6 +6,7 @@ import {
   TimeSettingPanel,
 } from '../components';
 import './style.scss';
+import { setAlarmData } from '../store/alarmPageReducer';
 
 class AlarmPage extends React.Component {
   constructor(props) {
@@ -31,6 +32,13 @@ class AlarmPage extends React.Component {
   };
 
   onTimeSettingComplete = () => {
+    const list = [...this.props.alarmData];
+    list.push({
+      time: '08:00',
+      triggerMode: '每天',
+    });
+    this.props.setAlarmData(list);
+
     this.setMaskVisible(false);
   };
 
@@ -96,4 +104,10 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(AlarmPage);
+function mapDispatchToProps(dispatch) {
+  return {
+    setAlarmData: (val) => dispatch(setAlarmData(val))
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AlarmPage);
