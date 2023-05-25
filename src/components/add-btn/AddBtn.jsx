@@ -1,6 +1,8 @@
 import './style.scss';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setTabIndex } from '../../store/appReducer';
 import eventbus from '../../utils/eventbus';
 
 const STATUS_STARTED = 'started';
@@ -134,12 +136,12 @@ function IconFlag(props = {}) {
 }
 
 export default function AddBtn(props = {}) {
-  console.log('props', props);
-  const [currentTabIndex, setCurrentTabIndex] = useState(0);
+  const appTabIndex = useSelector((state) => state.app.tabIndex);
+  const dispatch = useDispatch();
+
   const [status, setStatus] = useState(STATUS_UNSTARTED);
   useEffect(() => {
-    setCurrentTabIndex(props.type);
-
+    dispatch(setTabIndex(props.type));
     return function destroy() {
       // eventbus.off("tab:change");
     };
@@ -148,18 +150,18 @@ export default function AddBtn(props = {}) {
   const navigate = useNavigate();
 
   const onClick = (status) => {
-    if (currentTabIndex === 0) {
-      console.log('currentTabIndex', currentTabIndex);
+    if (appTabIndex === 0) {
+      console.log('appTabIndex', appTabIndex);
       navigate('/add-alarm');
       return;
     }
-    if (currentTabIndex === 1) {
-      console.log('currentTabIndex', currentTabIndex);
+    if (appTabIndex === 1) {
+      console.log('appTabIndex', appTabIndex);
       navigate('/select-city');
       return;
     }
     // 计时Tab
-    if (currentTabIndex === 3) {
+    if (appTabIndex === 3) {
       if (status === STATUS_UNSTARTED) {
         eventbus.emit('timer:unstarted');
         eventbus.emit('timer:opt:reset');
@@ -177,8 +179,8 @@ export default function AddBtn(props = {}) {
   };
 
   const onClickStart = () => {
-    console.log('onClickStart currentTabIndex', currentTabIndex);
-    if (currentTabIndex === 3) {
+    console.log('onClickStart appTabIndex', appTabIndex);
+    if (appTabIndex === 3) {
       // 计时Tab
 
       if (status === STATUS_UNSTARTED || status === STATUS_PAUSED) {
@@ -219,16 +221,16 @@ export default function AddBtn(props = {}) {
       </div> */}
 
       { // 闹钟页面
-        currentTabIndex === 0 && <IconAdd onClick={onClick} />
+        appTabIndex === 0 && <IconAdd onClick={onClick} />
       }
 
       { // 时钟页面
-        currentTabIndex === 1 && <IconAdd onClick={onClick} />
+        appTabIndex === 1 && <IconAdd onClick={onClick} />
       }
 
       {
         // 秒表页面
-        currentTabIndex === 2 && (
+        appTabIndex === 2 && (
           <div className="icon-row-wrapper">
             {
               // 矩形icon - 清除
@@ -251,7 +253,7 @@ export default function AddBtn(props = {}) {
 
       {
         // 计时页面
-        currentTabIndex === 3 && (
+        appTabIndex === 3 && (
           <>
             {
               status === STATUS_STARTED && (

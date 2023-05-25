@@ -1,30 +1,33 @@
 import './style.scss';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  useLocation, useMatches, useNavigation, useRoutes,
-} from 'react-router-dom';
-import Menubar from '../menubar/Menubar';
-import Tab from '../tab/Tab';
-import AddBtn from '../add-btn/AddBtn';
+  Menubar,
+  Tab,
+  AddBtn
+} from '../index';
 import AlarmPage from '../../pages/AlarmPage';
 import ClockPage from '../../pages/ClockPage';
 import StopWatchPage from '../../pages/StopWatchPage';
 import TimerPage from '../../pages/TimerPage';
-import eventbus from '../../utils/eventbus';
+import { setTabIndex } from '../../store/appReducer';
 
 export default function Layout(props = {}) {
   const [curTab, setCurTab] = useState(0);
+  const appTabIndex = useSelector((state) => state.app.tabIndex);
+  const dispatch = useDispatch();
 
   const onTabChange = (tab) => {
     console.log('onTabChange', tab);
     setCurTab(tab);
+    dispatch(setTabIndex(tab));
   };
 
   useEffect(() => {
     console.log('curTab', curTab);
   }, [curTab]);
 
-  // const navigation = useNavigation();
   const location = useLocation();
   console.log('location', location);
 
