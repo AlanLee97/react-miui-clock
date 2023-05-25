@@ -46,5 +46,6 @@ module.exports = {
     'max-len': 0,
     'react/no-unstable-nested-components': 0,
     'react/button-has-type': 0,
+    'comma-dangle': 0,
   },
 };
