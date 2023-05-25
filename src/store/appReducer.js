@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { AlarmPageData } from './applicationData';
 
 const {
   reducer,
@@ -6,7 +7,13 @@ const {
 } = createSlice({
   name: 'app',
   initialState: {
-    tabIndex: 0
+    tabIndex: 0,
+    page: {
+      alarmPage: {
+        alarmData: AlarmPageData.alarmData,
+        restData: AlarmPageData.restData
+      }
+    }
   },
   reducers: {
     setTabIndex(state, action) {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   AlarmItem,
   Mask,
@@ -6,51 +7,12 @@ import {
 } from '../components';
 import './style.scss';
 
-export default class AlarmPage extends React.Component {
+class AlarmPage extends React.Component {
   constructor(props) {
     super(props);
+    console.log('alarmPage props', props);
     this.state = {
       showMask: false,
-      alarmData: [
-        {
-          time: '07:00',
-          triggerMode: '每天',
-        },
-        {
-          time: '07:00',
-          triggerMode: '每天',
-        },
-        {
-          time: '07:00',
-          triggerMode: '每天',
-        },
-        {
-          time: '07:00',
-          triggerMode: '每天',
-        },
-        {
-          time: '07:00',
-          triggerMode: '每天',
-        },
-        {
-          time: '07:00',
-          triggerMode: '每天',
-        },
-        {
-          time: '07:00',
-          triggerMode: '每天',
-        },
-        {
-          time: '07:00',
-          triggerMode: '每天',
-        },
-      ],
-      restData: [
-        {
-          time: '07:00',
-          triggerMode: '每天',
-        },
-      ],
     };
   }
 
@@ -73,7 +35,8 @@ export default class AlarmPage extends React.Component {
   };
 
   render() {
-    const { alarmData, restData, showMask } = this.state;
+    const { showMask } = this.state;
+    const { alarmData, restData, } = this.props;
     return (
       <div className="page--alarm">
         <Mask show={showMask} closeOnMask setVisible={this.setMaskVisible}>
@@ -81,35 +44,39 @@ export default class AlarmPage extends React.Component {
         </Mask>
 
         <div className="group">
-          <div className="group-title">作息</div>
           {
             restData && restData.length > 0 ? (
-              <div className="rest-data">
-                {
+              <>
+                <div className="group-title">作息</div>
+                <div className="rest-data">
+                  {
                   restData.map((item, i) => (
                     <div key={`${item.time}_${i}`} onClick={this.onClickItem}>
                       <AlarmItem />
                     </div>
                   ))
                 }
-              </div>
+                </div>
+              </>
             ) : null
           }
         </div>
 
         <div className="group">
-          <div className="group-title">闹钟</div>
           {
             alarmData && alarmData.length > 0 ? (
-              <div className="alarm-data">
-                {
+              <>
+                <div className="group-title">闹钟</div>
+                <div className="alarm-data">
+                  {
                   alarmData.map((item, i) => (
                     <div key={`${item.time}_${i}`} onClick={this.onClickItem}>
                       <AlarmItem usingSwitch />
                     </div>
                   ))
                 }
-              </div>
+                </div>
+              </>
             ) : null
           }
         </div>
@@ -117,3 +84,16 @@ export default class AlarmPage extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const {
+    alarmData,
+    restData
+  } = state.alarmPage;
+  return {
+    alarmData,
+    restData
+  };
+}
+
+export default connect(mapStateToProps)(AlarmPage);
