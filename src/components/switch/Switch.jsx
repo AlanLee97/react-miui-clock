@@ -6,7 +6,8 @@ export default function Switch(props = {}) {
   const { onChange = () => {} } = props;
   const [on, setOn] = useState(false);
   const [clicked, setClicked] = useState(false);
-  const onClick = () => {
+  const onClick = (e) => {
+    e.stopPropagation();
     setOn(!on)
     setClicked(true)
     onChange(on)
