@@ -3,6 +3,6 @@ import tabbarReducer from './tabbarReducer';
 
 export default configureStore({
   reducer: {
-    tabbar: tabbarReducer
-  }
-})
+    tabbar: tabbarReducer,
+  },
+});

@@ -16,99 +16,97 @@ export default function Seconder(props = {}) {
   const [status, setStatus] = useState(STATUS_UNSTARTED);
 
   useEffect(() => {
-    if([STATUS_PAUSED, STATUS_STARTED].includes(status)) {
+    if ([STATUS_PAUSED, STATUS_STARTED].includes(status)) {
       startSec();
     }
 
     return function destroy() {
       clearInterval(timer);
       clearInterval(timerMs);
-    }
-  }, [currentSec])
+    };
+  }, [currentSec]);
 
   useEffect(() => {
-    if([STATUS_PAUSED, STATUS_STARTED].includes(status)) {
+    if ([STATUS_PAUSED, STATUS_STARTED].includes(status)) {
       startMs();
     }
     return function destroy() {
       clearInterval(timer);
       clearInterval(timerMs);
-    }
-  }, [currentMs])
+    };
+  }, [currentMs]);
 
   const startSec = () => {
     setStatus(STATUS_STARTED);
-    if(timer) clearInterval(timer);
-    let itvTimer = setInterval(() => {
-      if(itvTimer) clear(itvTimer);
+    if (timer) clearInterval(timer);
+    const itvTimer = setInterval(() => {
+      if (itvTimer) clear(itvTimer);
       setCurrentSec(currentSec + 1);
-      if(+currentSec === 59) {
+      if (+currentSec === 59) {
         setCurrentMin(currentMin + 1);
         setCurrentSec(0);
       }
-    }, 1000)
+    }, 1000);
     setTimer(itvTimer);
-  }
+  };
 
   const startMs = () => {
     setStatus(STATUS_STARTED);
-    let tmMS = setInterval(() => {
-      if(tmMS) {
+    const tmMS = setInterval(() => {
+      if (tmMS) {
         clearInterval(tmMS);
       }
-      if(timerMs) {
+      if (timerMs) {
         clearInterval(timerMs);
       }
       setCurrentMs(currentMs + 1);
-      if(currentMs >= 99) {
+      if (currentMs >= 99) {
         setCurrentSec(currentSec + 1);
         setCurrentMs(0);
       }
-      if(currentSec > 59) {
+      if (currentSec > 59) {
         setCurrentMin(currentMin + 1);
         setCurrentSec(0);
       }
-    }, 1000 / 99)
+    }, 1000 / 99);
     setTimerMs(tmMS);
-  }
+  };
 
   const pause = () => {
-    if(status === STATUS_PAUSED) return;
+    if (status === STATUS_PAUSED) return;
 
     setStatus(STATUS_PAUSED);
     clearInterval(timer);
     clearInterval(timerMs);
-  }
+  };
 
   const clear = () => {
-    if(status === STATUS_UNSTARTED) return;
+    if (status === STATUS_UNSTARTED) return;
     pause();
     setCurrentMs(0);
     setCurrentSec(0);
     setCurrentMin(0);
 
     setStatus(STATUS_UNSTARTED);
-  }
+  };
 
   const start = () => {
-    if(status === STATUS_STARTED) return;
+    if (status === STATUS_STARTED) return;
     startSec();
     startMs();
     setStatus(STATUS_STARTED);
-  }
+  };
 
   useImperativeHandle(cpnRef, () => ({
     start,
     pause,
     clear,
-    status
-  }))
-
-  
+    status,
+  }));
 
   return (
     <div className="cpn--seconder" ref={cpnRef}>
-      <div className='primary-time'>
+      <div className="primary-time">
         {`${appendZero(currentMin)}:${appendZero(currentSec)}.${appendZero(currentMs)}`}
       </div>
 
@@ -119,5 +117,5 @@ export default function Seconder(props = {}) {
       </div>
       <div>{status}</div> */}
     </div>
-  )
-} 
+  );
+}

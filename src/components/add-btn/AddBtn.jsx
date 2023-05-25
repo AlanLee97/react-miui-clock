@@ -1,11 +1,11 @@
-import "./style.scss";
-import eventbus from "../../utils/eventbus";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import './style.scss';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import eventbus from '../../utils/eventbus';
 
-const STATUS_STARTED = "started";
-const STATUS_PAUSED = "paused";
-const STATUS_UNSTARTED = "unstarted";
+const STATUS_STARTED = 'started';
+const STATUS_PAUSED = 'paused';
+const STATUS_UNSTARTED = 'unstarted';
 
 function IconAdd(props = {}) {
   return (
@@ -25,7 +25,7 @@ function IconAdd(props = {}) {
             d="M832 448H576V192a64 64 0 0 0-128 0v256H192a64 64 0 0 0 0 128h256v256a64 64 0 1 0 128 0V576h256a64 64 0 1 0 0-128z"
             p-id="6072"
             fill="#0c84ff"
-          ></path>
+          />
         </svg>
       </span>
     </div>
@@ -50,7 +50,7 @@ function IconStart(props = {}) {
             d="M90.624 100.442028C90.624 8.302184 154.098115-26.506202 231.905095 21.611273l642.931359 401.320211c77.80698 49.14125 77.80698 128.995782 0 177.113256L231.905095 1002.388727C154.098115 1050.506202 90.624 1015.697816 90.624 923.557972V100.442028z"
             p-id="3325"
             fill="#0c84ff"
-          ></path>
+          />
         </svg>
       </span>
     </div>
@@ -75,7 +75,7 @@ function IconStop(props = {}) {
             d="M804.571429 1024a146.285714 146.285714 0 0 1-146.285715-146.285714V146.285714a146.285714 146.285714 0 0 1 292.571429 0v731.428572a146.285714 146.285714 0 0 1-146.285714 146.285714z m-585.142858 0a146.285714 146.285714 0 0 1-146.285714-146.285714V146.285714a146.285714 146.285714 0 0 1 292.571429 0v731.428572a146.285714 146.285714 0 0 1-146.285715 146.285714z"
             fill="#0c84ff"
             p-id="5294"
-          ></path>
+          />
         </svg>
       </span>
     </div>
@@ -101,7 +101,7 @@ function IconReset(props = {}) {
             fill="#0c84ff"
             fillOpacity=".85"
             p-id="7182"
-          ></path>
+          />
         </svg>
       </span>
     </div>
@@ -126,7 +126,7 @@ function IconFlag(props = {}) {
             d="M303.45 49.857a38.832 38.832 0 0 0-25.38-9.397h-38.99a38.988 38.988 0 0 0-38.988 38.989v857.746a38.988 38.988 0 0 0 38.989 38.988h38.988a38.988 38.988 0 0 0 38.989-38.988V511.129H806.05a38.988 38.988 0 0 0 23.237-70.257L303.451 49.818z"
             fill="#0c84ff"
             p-id="20264"
-          ></path>
+          />
         </svg>
       </span>
     </div>
@@ -147,47 +147,45 @@ export default function AddBtn(props = {}) {
 
   const navigate = useNavigate();
 
-  const onClick = status => {
-    if(currentTabIndex === 0) {
+  const onClick = (status) => {
+    if (currentTabIndex === 0) {
       console.log('currentTabIndex', currentTabIndex);
       navigate('/add-alarm');
       return;
     }
-    if(currentTabIndex === 1) {
+    if (currentTabIndex === 1) {
       console.log('currentTabIndex', currentTabIndex);
       navigate('/select-city');
       return;
     }
     // 计时Tab
-    if (currentTabIndex === 3) { 
+    if (currentTabIndex === 3) {
       if (status === STATUS_UNSTARTED) {
-        eventbus.emit("timer:unstarted");
-        eventbus.emit("timer:opt:reset");
+        eventbus.emit('timer:unstarted');
+        eventbus.emit('timer:opt:reset');
       }
       if (status === STATUS_STARTED) {
-        eventbus.emit("timer:started");
+        eventbus.emit('timer:started');
         // setStatus(STATUS_STARTED);
-        eventbus.emit("timer:opt:start");
+        eventbus.emit('timer:opt:start');
       }
       if (status === STATUS_PAUSED) {
-        eventbus.emit("timer:opt:pause");
+        eventbus.emit('timer:opt:pause');
       }
-      setStatus(status)
-
-      return;
+      setStatus(status);
     }
-  }
+  };
 
   const onClickStart = () => {
-    console.log("onClickStart currentTabIndex", currentTabIndex);
+    console.log('onClickStart currentTabIndex', currentTabIndex);
     if (currentTabIndex === 3) {
       // 计时Tab
 
       if (status === STATUS_UNSTARTED || status === STATUS_PAUSED) {
-        eventbus.emit("timer:start");
+        eventbus.emit('timer:start');
       }
       if (status === STATUS_STARTED) {
-        eventbus.emit("timer:pause");
+        eventbus.emit('timer:pause');
         setStatus(STATUS_PAUSED);
       } else {
         setStatus(STATUS_STARTED);
@@ -196,17 +194,17 @@ export default function AddBtn(props = {}) {
       return;
     }
     if (status === STATUS_UNSTARTED || status === STATUS_PAUSED) {
-      eventbus.emit("seconder:start");
+      eventbus.emit('seconder:start');
       setStatus(STATUS_STARTED);
     }
     if (status === STATUS_STARTED) {
-      eventbus.emit("seconder:pause");
+      eventbus.emit('seconder:pause');
       setStatus(STATUS_PAUSED);
     }
   };
 
   const onClickClear = () => {
-    eventbus.emit("seconder:clear");
+    eventbus.emit('seconder:clear');
     setStatus(STATUS_UNSTARTED);
   };
 
@@ -229,7 +227,7 @@ export default function AddBtn(props = {}) {
       }
 
       {
-        //秒表页面
+        // 秒表页面
         currentTabIndex === 2 && (
           <div className="icon-row-wrapper">
             {

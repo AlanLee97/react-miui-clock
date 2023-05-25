@@ -1,18 +1,16 @@
-import React from "react";
+import React from 'react';
 import {
   ClockItem,
-  DisplayTime
-} from "../components";
+  DisplayTime,
+} from '../components';
 import './style.scss';
 
 export default class ClockPage extends React.Component {
-
-  state = {
-    clockItemList: []
-  }
-
   constructor(props) {
     super(props);
+    this.state = {
+      clockItemList: [],
+    };
   }
 
   componentDidMount() {
@@ -20,22 +18,22 @@ export default class ClockPage extends React.Component {
   }
 
   getClockItemList = () => {
-    let data = [
+    const data = [
       {
         location: '伦敦',
-        timegap: -8
+        timegap: -8,
       },
       {
         location: '纽约',
-        timegap: -12
-      }
-    ]
-    Promise.resolve(data).then(res => {
+        timegap: -12,
+      },
+    ];
+    Promise.resolve(data).then((res) => {
       this.setState({
-        clockItemList: res
-      })
-    })
-  }
+        clockItemList: res,
+      });
+    });
+  };
 
   render() {
     const { clockItemList } = this.state;
@@ -53,6 +51,6 @@ export default class ClockPage extends React.Component {
           )
         }
       </div>
-    )
+    );
   }
 }

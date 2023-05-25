@@ -1,21 +1,18 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef } from 'react';
 import {
-  Seconder
-} from "../components";
-import eventbus from "../utils/eventbus";
+  Seconder,
+} from '../components';
+import eventbus from '../utils/eventbus';
 import './style.scss';
 
-const SeconderForward = forwardRef((props, ref) => <Seconder cpnRef={ref} {...props} />)
+const SeconderForward = forwardRef((props, ref) => <Seconder cpnRef={ref} {...props} />);
 
 export default class StopWatchPage extends React.Component {
-
-  state = {};
-
   constructor(props) {
     super(props);
     this.state = {
       seconderRef: null,
-    }
+    };
   }
 
   seconderRef = null;
@@ -32,23 +29,23 @@ export default class StopWatchPage extends React.Component {
     eventbus.off('seconder:start', this.onSeconderPause);
   }
 
-  onSeconderStart = e => {
+  onSeconderStart = (e) => {
     this.seconderRef.start();
-  }
+  };
 
-  onSeconderPause = e => {
+  onSeconderPause = (e) => {
     this.seconderRef.pause();
-  }
+  };
 
-  onSeconderClear = e => {
+  onSeconderClear = (e) => {
     this.seconderRef.clear();
-  }
+  };
 
   render() {
     return (
       <div className="page--stopwatch">
-        <SeconderForward ref={elRef => this.seconderRef = elRef} />
+        <SeconderForward ref={(elRef) => this.seconderRef = elRef} />
       </div>
-    )
+    );
   }
 }

@@ -8,20 +8,23 @@ export default function Tabbar(props = {}) {
   const onClick = (i) => {
     setCurrentIndex(i);
     onChange(i);
-  }
+  };
   useImperativeHandle(cpnRef, () => ({
-    setCurrentIndex
-  }))
+    setCurrentIndex,
+  }));
   return (
     <div className="cpn--tabbar" ref={cpnRef}>
       {
         tabbarText.map((item, i) => (
-          <div key={`${i}_${item}`} className={['tabbar-item', i === currentIndex ? 'tabbar-item-active' : ''].join(' ')} 
-            onClick={() => onClick(i)}>
-              { item }
+          <div
+            key={`${i}_${item}`}
+            className={['tabbar-item', i === currentIndex ? 'tabbar-item-active' : ''].join(' ')}
+            onClick={() => onClick(i)}
+          >
+            { item }
           </div>
         ))
       }
     </div>
-  )
-} 
+  );
+}

@@ -3,17 +3,17 @@ import { createSlice } from '@reduxjs/toolkit';
 export const tabbarSlice = createSlice({
   name: 'tabbar',
   initialState: {
-    currentIndex: 0
+    currentIndex: 0,
   },
   reducers: {
     setTabbarIndex: (state, action) => {
       state.currentIndex = action.payload;
     },
-  }
-})
+  },
+});
 
 export const {
-  setTabbarIndex
+  setTabbarIndex,
 } = tabbarSlice.actions;
 
 export default tabbarSlice.reducer;

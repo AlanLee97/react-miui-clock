@@ -1,57 +1,57 @@
-import React from "react";
+import React from 'react';
 import {
   AlarmItem,
   Mask,
-  TimeSettingPanel
-} from "../components";
+  TimeSettingPanel,
+} from '../components';
 import './style.scss';
 
 export default class AlarmPage extends React.Component {
-  state = {
-    showMask: false,
-    alarmData: [
-      {
-        time: '07:00',
-        triggerMode: '每天',
-      },
-      {
-        time: '07:00',
-        triggerMode: '每天',
-      },
-      {
-        time: '07:00',
-        triggerMode: '每天',
-      },
-      {
-        time: '07:00',
-        triggerMode: '每天',
-      },
-      {
-        time: '07:00',
-        triggerMode: '每天',
-      },
-      {
-        time: '07:00',
-        triggerMode: '每天',
-      },
-      {
-        time: '07:00',
-        triggerMode: '每天',
-      },
-      {
-        time: '07:00',
-        triggerMode: '每天',
-      },
-    ],
-    restData: [
-      {
-        time: '07:00',
-        triggerMode: '每天',
-      },
-    ]
-  }
   constructor(props) {
     super(props);
+    this.state = {
+      showMask: false,
+      alarmData: [
+        {
+          time: '07:00',
+          triggerMode: '每天',
+        },
+        {
+          time: '07:00',
+          triggerMode: '每天',
+        },
+        {
+          time: '07:00',
+          triggerMode: '每天',
+        },
+        {
+          time: '07:00',
+          triggerMode: '每天',
+        },
+        {
+          time: '07:00',
+          triggerMode: '每天',
+        },
+        {
+          time: '07:00',
+          triggerMode: '每天',
+        },
+        {
+          time: '07:00',
+          triggerMode: '每天',
+        },
+        {
+          time: '07:00',
+          triggerMode: '每天',
+        },
+      ],
+      restData: [
+        {
+          time: '07:00',
+          triggerMode: '每天',
+        },
+      ],
+    };
   }
 
   componentDidMount() {
@@ -59,25 +59,25 @@ export default class AlarmPage extends React.Component {
   }
 
   onClickItem = () => {
-    this.setMaskVisible(true)
-  }
+    this.setMaskVisible(true);
+  };
 
   setMaskVisible = (visible) => {
     this.setState({
-      showMask: visible
-    })
-  }
+      showMask: visible,
+    });
+  };
 
   onTimeSettingComplete = () => {
-    this.setMaskVisible(false)
-  }
+    this.setMaskVisible(false);
+  };
 
   render() {
     const { alarmData, restData, showMask } = this.state;
     return (
       <div className="page--alarm">
-        <Mask show={showMask} closeOnMask={true} setVisible={this.setMaskVisible}>
-          <TimeSettingPanel onComplete={this.onTimeSettingComplete}></TimeSettingPanel>
+        <Mask show={showMask} closeOnMask setVisible={this.setMaskVisible}>
+          <TimeSettingPanel onComplete={this.onTimeSettingComplete} />
         </Mask>
 
         <div className="group">
@@ -87,7 +87,7 @@ export default class AlarmPage extends React.Component {
               <div className="rest-data">
                 {
                   restData.map((item, i) => (
-                    <div key={item.time + '_' + i} onClick={this.onClickItem}>
+                    <div key={`${item.time}_${i}`} onClick={this.onClickItem}>
                       <AlarmItem />
                     </div>
                   ))
@@ -104,8 +104,8 @@ export default class AlarmPage extends React.Component {
               <div className="alarm-data">
                 {
                   alarmData.map((item, i) => (
-                    <div key={item.time + '_' + i} onClick={this.onClickItem}>
-                      <AlarmItem usingSwitch={true} />
+                    <div key={`${item.time}_${i}`} onClick={this.onClickItem}>
+                      <AlarmItem usingSwitch />
                     </div>
                   ))
                 }
@@ -114,6 +114,6 @@ export default class AlarmPage extends React.Component {
           }
         </div>
       </div>
-    )
+    );
   }
 }
