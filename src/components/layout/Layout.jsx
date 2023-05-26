@@ -46,12 +46,7 @@ export default function Layout(props = {}) {
       </div>
       {
         location.pathname === '/' && (
-          <>
-            <AddBtn type={0} hide={curTab !== 0} />
-            <AddBtn type={1} hide={curTab !== 1} />
-            <AddBtn type={2} hide={curTab !== 2} />
-            <AddBtn type={3} hide={curTab !== 3} />
-          </>
+          <AddBtn />
         )
       }
 

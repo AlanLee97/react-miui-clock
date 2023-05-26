@@ -137,6 +137,7 @@ function IconFlag(props = {}) {
 
 export default function AddBtn(props = {}) {
   const appTabIndex = useSelector((state) => state.app.tabIndex);
+  console.log('AddBtn', appTabIndex);
   const dispatch = useDispatch();
 
   const [status, setStatus] = useState(STATUS_UNSTARTED);

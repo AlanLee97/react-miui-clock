@@ -47,5 +47,6 @@ module.exports = {
     'react/no-unstable-nested-components': 0,
     'react/button-has-type': 0,
     'comma-dangle': 0,
+    'react/jsx-one-expression-per-line': 0
   },
 };
