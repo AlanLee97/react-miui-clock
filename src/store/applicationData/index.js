@@ -1,6 +1,9 @@
+import { createUUID } from "../../utils";
+
 export const AlarmPageData = {
   alarmData: [
     {
+      id: createUUID(),
       time: {
         hour: 7,
         min: 0
@@ -8,15 +11,17 @@ export const AlarmPageData = {
       triggerMode: '每天',
     },
     {
+      id: createUUID(),
       time: {
-        hour: 7,
+        hour: 8,
         min: 0
       },
       triggerMode: '每天',
     },
     {
+      id: createUUID(),
       time: {
-        hour: 7,
+        hour: 9,
         min: 0
       },
       triggerMode: '每天',
@@ -24,6 +29,7 @@ export const AlarmPageData = {
   ],
   restData: [
     {
+      id: createUUID(),
       time: {
         hour: 7,
         min: 0

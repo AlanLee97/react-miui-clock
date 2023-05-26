@@ -66,3 +66,9 @@ export function calcLeftTime(val, total) {
     return +total - 1 - m - +val;
   }
 }
+
+export function createUUID() {
+  const link = URL.createObjectURL(new Blob());
+  const strArr = link.split('/');
+  return strArr[strArr.length - 1];
+}

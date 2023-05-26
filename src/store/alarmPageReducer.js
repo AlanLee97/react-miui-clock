@@ -14,6 +14,7 @@ const {
     setAlarmData(state, action) {
       console.log('reducer setAlarmData');
       state.alarmData = action.payload;
+      console.log('newest state', state);
     }
   }
 });
