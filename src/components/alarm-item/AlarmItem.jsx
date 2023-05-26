@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { appendZero, onLongTap } from '../../utils/index.js';
+import { appendZero, onLongTap, calcLeftTime } from '../../utils/index.js';
 import Switch from '../switch/Switch.jsx';
 import './style.scss';
 
@@ -21,18 +21,6 @@ export default function AlarmItem(props = {}) {
   };
   const onSwitchChange = (val) => {
     console.log('onSwitchChange', val);
-  };
-  const calcLeftTime = (val, total) => {
-    const h = new Date().getHours();
-    const m = new Date().getMinutes();
-    if (+total === 24) {
-      if (val > h && val < +total) {
-        return +val - h;
-      }
-      return +total - 1 - h + +val;
-    } else {
-      return +total - 1 - m - +val;
-    }
   };
 
   return (
