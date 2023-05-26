@@ -1,21 +1,33 @@
 export const AlarmPageData = {
   alarmData: [
     {
-      time: '07:00',
+      time: {
+        hour: 7,
+        min: 0
+      },
       triggerMode: '每天',
     },
     {
-      time: '07:00',
+      time: {
+        hour: 7,
+        min: 0
+      },
       triggerMode: '每天',
     },
     {
-      time: '07:00',
+      time: {
+        hour: 7,
+        min: 0
+      },
       triggerMode: '每天',
     }
   ],
   restData: [
     {
-      time: '07:00',
+      time: {
+        hour: 7,
+        min: 0
+      },
       triggerMode: '每天',
     },
   ],

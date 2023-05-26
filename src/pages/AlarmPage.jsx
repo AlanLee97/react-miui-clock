@@ -59,8 +59,8 @@ class AlarmPage extends React.Component {
                 <div className="rest-data">
                   {
                   restData.map((item, i) => (
-                    <div key={`${item.time}_${i}`} onClick={this.onClickItem}>
-                      <AlarmItem />
+                    <div key={`item_${i}`} onClick={this.onClickItem}>
+                      <AlarmItem data={item} />
                     </div>
                   ))
                 }
@@ -78,8 +78,8 @@ class AlarmPage extends React.Component {
                 <div className="alarm-data">
                   {
                   alarmData.map((item, i) => (
-                    <div key={`${item.time}_${i}`} onClick={this.onClickItem}>
-                      <AlarmItem usingSwitch />
+                    <div key={`item_${i}`} onClick={this.onClickItem}>
+                      <AlarmItem usingSwitch data={item} />
                     </div>
                   ))
                 }

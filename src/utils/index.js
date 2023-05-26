@@ -35,7 +35,7 @@ export function onSwipe() {
 
 export function appendZero(num = 0) {
   if (+num < 10) {
-    num = `0${num}`;
+    num = `0${+num}`;
   }
   return num;
 }
