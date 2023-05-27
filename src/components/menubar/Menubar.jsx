@@ -1,12 +1,23 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Mask from '../mask/Mask';
 import './style.scss';
 
 function MenuItemBox(props = {}) {
+  const navigatte = useNavigate();
+  const toPage = (e) => {
+    // debugger;
+    // navigatte('/rest-time-manage');
+    console.log('toPage');
+  };
+  const stop = (e) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="cpn--menu-item-box">
-      <div className="panel">
-        <div className="row">作息管理</div>
+    <div className="cpn--menu-item-box" onClick={stop}>
+      <div className="panel" onClick={stop}>
+        <div className="row" onClick={toPage}>作息管理</div>
         <div className="row">生活早报</div>
         <div className="row">设置</div>
       </div>
