@@ -278,3 +278,118 @@
     }
   }
 }
+
+.page--select-city {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  padding: 0 2rem;
+  padding-top: var(--status-bar-height);
+  display: flex;
+  flex-direction: column;
+  .cpn--header {
+    .title-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.6rem;
+      .title-wrapper {
+        text-align: center;
+      }
+      .title {
+        font-size: 2rem;
+      }
+      .second-title {
+        color: #00000099;
+        font-size: 1.8rem;;
+      }
+    }
+  }
+
+  .cpn--search-bar {
+    width: 100%;
+
+    .fake-input {
+      background-color: #00000008;
+      padding: 1rem 1.6rem;
+      font-size: 1.4rem;
+      color: #00000033;
+      border-radius: 999em;
+      display: flex;
+      align-items: center;
+
+      .fake-placeholder {
+        margin-left: 1.6rem;
+        flex: 1;
+      }
+    }
+
+    .real-input-wrapper {
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      .input-box {
+        background-color: #00000008;
+        padding: 1rem 1.6rem;
+        font-size: 1.4rem;
+        color: #00000033;
+        border-radius: 999em;
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        .input {
+          outline: none;
+          background-color: transparent;
+          margin-left: 1.6rem;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          border: none;
+          width: 100%;
+          flex: 1;
+        }
+      }
+
+      .btn-cancel {
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        margin-left: 1.6rem;
+      }
+    }
+  }
+
+  .cpn--letter-indicator {
+    position: fixed;
+    right: 1.6rem;
+    margin-top: 3rem;
+    border-radius: 999rem;
+    background-color: #00000008;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    width: 2.2rem;
+    z-index: 999;
+
+    .letter {
+      display: inline-block;
+      margin: 0.4rem;
+      color: #00000099;
+      font-weight: 100;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  }
+
+  .city-list-wrapper {
+    position: relative;
+    flex: 1;
+    overflow-y: scroll;
+    margin-top: 2rem;
+    .city-list {
+      .city-item {
+        padding: 1.6rem 0;
+      }
+    } 
+  }
+}
