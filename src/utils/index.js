@@ -55,15 +55,17 @@ export function className(name = '') {
 window.className = className;
 
 export function calcLeftTime(val, total) {
+  val = +val;
+  total = +total;
   const h = new Date().getHours();
   const m = new Date().getMinutes();
-  if (+total === 24) {
-    if (val > h && val < +total) {
-      return +val - h;
+  if (total === 24) {
+    if (val > h && val < total) {
+      return val - h;
     }
-    return +total - 1 - h + +val;
+    return total - 1 - h + val;
   } else {
-    return +total - 1 - m - +val;
+    return total - 1 - m - val;
   }
 }
 

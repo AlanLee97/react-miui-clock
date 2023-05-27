@@ -48,6 +48,7 @@ module.exports = {
     "no-debugger": 1,
     "no-else-return": 0,
     "no-trailing-spaces": 0,
-    "prefer-const": 1
+    "prefer-const": 1,
+    "arrow-body-style": 0
   },
 };
