@@ -2,6 +2,7 @@ import Layout from '../components/layout/Layout';
 import AddAlarmPage from '../pages/AddAlarmPage';
 import SelectCityPage from '../pages/SelectCityPage';
 import RestTimeManagePage from '../pages/RestTimeManagePage';
+import LifeEarlyReportPage from '../pages/LifeEarlyReportPage';
 
 const routes = [
   {
@@ -19,6 +20,10 @@ const routes = [
   {
     path: '/rest-time-manage',
     component: RestTimeManagePage
+  },
+  {
+    path: '/life-early-report',
+    component: LifeEarlyReportPage
   }
 ];
 

@@ -19,7 +19,7 @@ function MenuItemBox(props = {}) {
     <div className="cpn--menu-item-box" onClick={stop}>
       <div className="panel" onClick={stop}>
         <div className="row" onClick={() => toPage('/rest-time-manage')}>作息管理</div>
-        <div className="row" onClick={() => toPage('/rest-time-manage')}>生活早报</div>
+        <div className="row" onClick={() => toPage('/life-early-report')}>生活早报</div>
         <div className="row">设置</div>
       </div>
     </div>

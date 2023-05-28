@@ -100,7 +100,7 @@ function SleepAnalyseModule(props = {}) {
   );
 }
 
-export default class SelectCityPage extends React.Component {
+export default class RestTimeManagePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

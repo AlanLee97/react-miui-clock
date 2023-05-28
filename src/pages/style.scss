@@ -511,3 +511,89 @@
     }
   }
 }
+
+.page--life-early-report {
+  display: flex;
+  flex-direction: column;
+  .cpn--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+  }
+
+  .page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cpn--setting-module {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    .switch-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem 0;
+
+      .title {
+        font-size: 1.6rem;
+      }
+      .desc {
+        font-size: 1.4rem;
+        color: #00000066;
+      }
+    }
+  }
+
+  .cpn--count-module {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 1.4rem;
+      color: #00000099;
+      margin-bottom: 2rem;
+    }
+
+    .list-wrapper {
+      flex: 1;
+      overflow-y: scroll;
+    }
+  }
+
+  .cpn--count-item {
+    color: #00000066;
+    .time {
+      margin-left: 1.6rem;
+      .dot {
+        display: inline-block;
+        width: 0.8rem;
+        height: 0.8rem;
+        border: 1px solid #00000066;
+        border-radius: 4rem;
+        margin-right: 0.6rem;
+      }
+    }
+    .detail {
+      margin-left: 2rem;
+      padding-left: 2rem;
+      border-left: 1px solid #ccc;
+      display: flex;
+      .data-box {
+        flex: 1;
+        .tip {
+          margin: 1rem 0;
+        }
+
+        .data {
+          font-size: 2.2rem;
+        }
+      }
+    }
+  }
+  
+}
