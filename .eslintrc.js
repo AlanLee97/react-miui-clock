@@ -49,6 +49,11 @@ module.exports = {
     "no-else-return": 0,
     "no-trailing-spaces": 0,
     "prefer-const": 1,
-    "arrow-body-style": 0
+    "arrow-body-style": 0,
+    "react/jsx-max-props-per-line": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-closing-tag-location": 0,
+    "react/self-closing-comp": 0
   },
 };

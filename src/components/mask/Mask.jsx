@@ -13,6 +13,7 @@ export default function Mask(props = {}) {
     if (closeOnMask) {
       setVisible(!show);
     }
+    console.log('onClickMask');
   };
 
   return ReactDOM.createPortal(

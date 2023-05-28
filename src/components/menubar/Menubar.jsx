@@ -5,10 +5,11 @@ import './style.scss';
 
 function MenuItemBox(props = {}) {
   const navigatte = useNavigate();
-  const toPage = (e) => {
+  const toPage = (path) => {
     // debugger;
     // navigatte('/rest-time-manage');
     console.log('toPage');
+    navigatte(path);
   };
   const stop = (e) => {
     e.stopPropagation();
@@ -17,8 +18,8 @@ function MenuItemBox(props = {}) {
   return (
     <div className="cpn--menu-item-box" onClick={stop}>
       <div className="panel" onClick={stop}>
-        <div className="row" onClick={toPage}>作息管理</div>
-        <div className="row">生活早报</div>
+        <div className="row" onClick={() => toPage('/rest-time-manage')}>作息管理</div>
+        <div className="row" onClick={() => toPage('/rest-time-manage')}>生活早报</div>
         <div className="row">设置</div>
       </div>
     </div>
@@ -32,7 +33,7 @@ export default function Menubar() {
   };
   return (
     <div className="cpn--menubar">
-      <Mask show={maskVisible} closeOnMask setVisible={setMaskVisible}>
+      <Mask show={maskVisible} closeOnMask={false} setVisible={setMaskVisible}>
         <MenuItemBox />
       </Mask>
       <span onClick={onClickMenu}>

@@ -10,6 +10,7 @@
   --font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
 
   --status-bar-height: 4rem;
+  --page-padding: 1.6rem;
 }
 
 body {
