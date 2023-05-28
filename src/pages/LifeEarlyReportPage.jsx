@@ -202,7 +202,7 @@ export default class LifeEarlyReportPage extends React.Component {
   render() {
     return (
       <div className="page-wrapper">
-        <div className="page--life-early-report">
+        <div className="page page--life-early-report">
           <Header />
           <div className="page-content">
             <SettingModule />

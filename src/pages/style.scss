@@ -5,7 +5,16 @@
   z-index: 999;
   width: 100vw;
   height: 100vh;
-  padding: 0 var(--page-padding);
+}
+
+.page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  padding: var(--page-padding);
   padding-top: var(--status-bar-height);
 }
 
@@ -405,6 +414,9 @@
 .page--rest-time-magnage {
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  padding: var(--page-padding);
+  padding-top: var(--status-bar-height);
   .cpn--header {
     display: flex;
     align-items: center;
@@ -521,6 +533,7 @@
 .page--life-early-report {
   display: flex;
   flex-direction: column;
+  background-color: #fff;
   .cpn--header {
     display: flex;
     align-items: center;

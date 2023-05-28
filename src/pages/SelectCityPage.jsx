@@ -274,7 +274,7 @@ export default class SelectCityPage extends React.Component {
     const { cityList, showContent } = this.state;
     return (
       <div className="">
-        <div className="page--select-city">
+        <div className="page page--select-city">
           <Header onInputMode={this.onInputMode} />
           {showContent && (
             <div className="city-list-wrapper">

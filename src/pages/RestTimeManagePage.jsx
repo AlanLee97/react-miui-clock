@@ -113,7 +113,7 @@ export default class RestTimeManagePage extends React.Component {
   render() {
     return (
       <div className="page-wrapper">
-        <div className="page--rest-time-magnage">
+        <div className="page page--rest-time-magnage">
           <Header />
           <div className="page-content">
             <div className="page-title">
