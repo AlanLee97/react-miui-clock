@@ -9,7 +9,6 @@
   padding-top: var(--status-bar-height);
 }
 
-
 .page--alarm {
   padding: 0 1.2rem;
   padding-bottom: 10rem;
@@ -388,9 +387,16 @@
     flex: 1;
     overflow-y: scroll;
     margin-top: 2rem;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     .city-list {
       .city-item {
         padding: 1.6rem 0;
+      }
+
+      .city-name {
+        font-size: 2rem;
       }
     } 
   }

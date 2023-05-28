@@ -16,7 +16,7 @@ function MenuItemBox(props = {}) {
   };
 
   return (
-    <div className="cpn--menu-item-box" onClick={stop}>
+    <div className="cpn--menu-item-box">
       <div className="panel" onClick={stop}>
         <div className="row" onClick={() => toPage('/rest-time-manage')}>作息管理</div>
         <div className="row" onClick={() => toPage('/life-early-report')}>生活早报</div>
@@ -33,7 +33,7 @@ export default function Menubar() {
   };
   return (
     <div className="cpn--menubar">
-      <Mask show={maskVisible} closeOnMask={false} setVisible={setMaskVisible}>
+      <Mask show={maskVisible} closeOnMask setVisible={setMaskVisible}>
         <MenuItemBox />
       </Mask>
       <span onClick={onClickMenu}>

@@ -273,7 +273,7 @@ export default class SelectCityPage extends React.Component {
   render() {
     const { cityList, showContent } = this.state;
     return (
-      <div className="page-wrapper">
+      <div className="">
         <div className="page--select-city">
           <Header onInputMode={this.onInputMode} />
           {showContent && (
@@ -287,7 +287,7 @@ export default class SelectCityPage extends React.Component {
                         key={`${i}_${city.id}_${city.name}`}
                         className="city-item"
                       >
-                        <div>{city.name}</div>
+                        <div className="city-name">{city.name}</div>
                         <div>
                           {city.country} GMT {city.gmt}
                         </div>
