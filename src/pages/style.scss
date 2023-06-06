@@ -545,6 +545,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
   }
 
   .cpn--setting-module {
@@ -571,6 +572,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow: scroll;
 
     .title {
       font-size: 1.4rem;
