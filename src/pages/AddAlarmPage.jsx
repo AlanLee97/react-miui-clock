@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
-import { NumberSlideSelector, Switch } from "../components";
+import { Mask, NumberSlideSelector, Switch } from "../components";
 import { className, appendZero, calcLeftTime } from "../utils";
 import { setAlarmData } from "../store/alarmPageReducer";
 import "./style.scss";
@@ -318,14 +318,87 @@ function RingtoneSelector(props = {}) {
 }
 
 function OtherSetting(props = {}) {
+  const { onNoteChange = () => {} } = props;
+  const [showMask, setShowMask] = useState(false);
+  const [showReapetMask, setShowReapetMask] = useState(false);
+  const [note, setNote] = useState('');
+  const [noteTemp, setNoteTemp] = useState('');
+  const [curRepeat, setCurRepeat] = useState(1);
+  const toShowMask = () => {
+    setShowMask(true);
+  };
+
+  const stop = (e) => {
+    e.stopPropagation();
+  };
+
+  const closeMask = () => {
+    setShowMask(false);
+  };
+
+  const onInputChange = (e) => {
+    setNoteTemp(e.target.value);
+  };
+
+  const onConfirm = () => {
+    setNote(noteTemp);
+    onNoteChange(note);
+    closeMask();
+  };
+
+  const onConfirmRepeat = (index) => {
+    setCurRepeat(index);
+    setShowReapetMask(false);
+  };
+
+  const repeatOptopns = [
+    '只响一次',
+    '每天',
+    '法定工作日',
+    '法定节假日',
+    '周一至周五',
+    '自定义',
+  ];
+
   return (
     <div className="cpn--other-setting">
+      <Mask show={showMask} setVisible={setShowMask} closeOnMask>
+        <div className="new-alarm-note-wrapper">
+          <div className="new-alarm-note-content" onClick={stop}>
+            <div className="title">新建闹钟备注</div>
+            <div className="input-box">
+              <input type="text" placeholder="请输入闹钟备注" onChange={onInputChange} />
+            </div>
+            <div className="btn-row">
+              <button onClick={closeMask}>取消</button>
+              <button className="ml-1 primary-btn" onClick={onConfirm}>确定</button>
+            </div>
+          </div>
+        </div>
+      </Mask>
+
+      <Mask show={showReapetMask} setVisible={setShowReapetMask} closeOnMask>
+        <div className="repeat-time-wrapper">
+          <div className="repeat-time-content" onClick={stop}>
+            {
+              repeatOptopns.map((item, index) => {
+                return (
+                  <div key={index} 
+                    className={['repeat-time-item', index === curRepeat ? 'repeat-time-item-active' : ''].join(' ').trim()} 
+                    onClick={() => onConfirmRepeat(index)}>{item}</div>
+                );
+              })
+            }
+          </div>
+        </div>
+      </Mask>
+
       <div className="small-title">其他设置</div>
       <div className="setting-item-wrapper">
-        <div className="setting-item">
+        <div className="setting-item" onClick={() => setShowReapetMask(true)}>
           <div className="setting-item-title">重复</div>
           <div className="setting-item-content">
-            只响一次
+            {repeatOptopns[curRepeat]}
             <div className="icon-wrapper">
               <svg
                 t="1682930678863"
@@ -358,9 +431,9 @@ function OtherSetting(props = {}) {
             <Switch />
           </div>
         </div>
-        <div className="setting-item fake-input-box">
+        <div className="setting-item fake-input-box" onClick={toShowMask}>
           <div className="setting-item-title">备注</div>
-          <div className="setting-item-content">请输入</div>
+          <div className="setting-item-content">{note || '请输入'}</div>
         </div>
       </div>
     </div>
@@ -375,6 +448,7 @@ class AddAlarmPage extends React.Component {
         hour: 0,
         min: 0,
       },
+      note: ''
     };
   }
 
@@ -384,6 +458,13 @@ class AddAlarmPage extends React.Component {
     console.log("onTimeSelected val", val);
     this.setState({
       selectedTime: val,
+    });
+  };
+
+  onNoteChange = val => {
+    console.log('onNoteChange', val);
+    this.setState({
+      note: val
     });
   };
 
@@ -407,7 +488,7 @@ class AddAlarmPage extends React.Component {
               </ModuleBox>
 
               <ModuleBox>
-                <OtherSetting />
+                <OtherSetting onNoteChange={this.onNoteChange} />
               </ModuleBox>
             </div>
           </div>
