@@ -1,5 +1,8 @@
 ## 简介
 我个人比较喜欢MIUI系统应用的简洁风格，所以有了想用前端技术模仿写一套APP的想法。
+
+> 应用部署在我的网站：[http://alanlee.top/app/react-miui-clock/](http://alanlee.top/app/react-miui-clock/)
+
 ## 技术栈
 
 - React
