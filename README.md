@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+## 简介
+我个人比较喜欢MIUI系统应用的简洁风格，所以有了想用前端技术模仿写一套APP的想法。
+## 技术栈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- React
+- React-Router-Dom
+- React-Redux
+## 界面截图
+| ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363925080-5cae5070-188b-4672-8210-960c3c8ae5dc.png#averageHue=%23f8f8f8&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=ua558d385&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=32966&status=done&style=none&taskId=u0194e81e-2d45-4b02-82fc-0232077f645&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363941133-96532ef8-e121-4ddb-bbf8-0a4f8ec4424a.png#averageHue=%23dfdfdf&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=ue6bb0346&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=36614&status=done&style=none&taskId=u4e034a49-5d85-45fe-aa48-5069b69565b&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363961695-e776b12f-ed3a-4caa-b22a-ff5c90cc74d4.png#averageHue=%23fbf9f7&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u94e1725f&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=41812&status=done&style=none&taskId=u8d86738e-5547-443e-80f7-711e19342d0&title=&width=386) |
+| --- | --- | --- |
+| ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363977732-a2b981d3-a98e-47b4-9e6b-36693271b608.png#averageHue=%23dbd9d8&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=uf79a6bf9&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=37453&status=done&style=none&taskId=ud49c69e2-3f6d-452d-a7e1-f4471a480de&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363987555-7e9b764f-9dec-41e3-856d-8bf98233e88a.png#averageHue=%23d2d1cf&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u277a2a74&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=43243&status=done&style=none&taskId=ud05a57a3-c1ad-457f-b8fd-33b023f738e&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364010372-4d390f7f-3ecc-441e-bdaf-5529def8ab6a.png#averageHue=%23f6f6f6&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u60e46ed0&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=31411&status=done&style=none&taskId=ubeb9b3fd-2c56-4168-8d13-c8a0208f09f&title=&width=386) |
+| ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364023466-9c63d341-4bc4-4b2a-965e-3462b41b62d1.png#averageHue=%23f9f9f9&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u36196092&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=38804&status=done&style=none&taskId=u6576d8c2-f81c-4442-a478-c3ff4a901ea&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364043740-d0a3cc99-0e43-4b75-bd02-046047dbd095.png#averageHue=%23f5f5f5&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=uea6e9f98&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=20518&status=done&style=none&taskId=u51e45aac-f570-4717-87c9-abbe9cc5ad3&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364064100-bdaa7e26-8fa0-4479-ae99-8c6d166a09bd.png#averageHue=%23f5f5f5&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=ua36b8110&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=28501&status=done&style=none&taskId=u6d2e61db-d4fd-4cf5-8fdd-d1fb269d899&title=&width=386) |
+| ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364081782-11c6f860-fa0a-4950-b489-79f0d00740b0.png#averageHue=%23f6f6f5&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=ue72efa53&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=27406&status=done&style=none&taskId=uddb909dc-91f7-4e10-a60e-74851ce5ebf&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364114579-3586f703-b8ba-4b26-b015-be382c7b60a4.png#averageHue=%23cacaca&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=uae5d0c3d&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=34072&status=done&style=none&taskId=uba46a63f-f641-4e52-8e8e-60377bb0c4d&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364101997-eb49095f-aac2-4ba4-9a85-7bc56f5ecc98.png#averageHue=%23fdfcfc&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u0b53e9b3&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=24156&status=done&style=none&taskId=u27db8d0c-4ebd-4342-9da8-c15b9915e3b&title=&width=386) |
+| ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364159710-f76876fd-e135-469c-929e-59d743a12bbb.png#averageHue=%23fbfbfa&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u72cef4f6&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=50433&status=done&style=none&taskId=ud21b63c8-b739-4210-a8f0-4322884e261&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364175882-712d0c2b-eecc-4214-a82a-e686e4ffc0c7.png#averageHue=%23fbfbfa&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u8760d9e3&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=24241&status=done&style=none&taskId=u30306fcb-376b-49a5-9507-150e24d00f1&title=&width=386) |  |
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 其他
+后续会继续使用React写MIUI天气APP
