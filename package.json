@@ -18,6 +18,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:rar": "react-app-rewired start",
+    "build:rar": "react-app-rewired build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint ./src/**/*.jsx --fix",
@@ -42,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "compression-webpack-plugin": "^10.0.0",
     "eslint": "^8.41.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.27.5",
@@ -49,6 +52,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "node-sass": "^8.0.0",
-    "sass": "^1.59.2"
+    "react-app-rewired": "^2.2.1",
+    "sass": "^1.59.2",
+    "webpack-merge": "^5.10.0"
   }
 }
