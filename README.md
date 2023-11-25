@@ -1,14 +1,19 @@
 ## 简介
 我个人比较喜欢MIUI系统应用的简洁风格，所以有了想用前端技术模仿写一套APP的想法。
+
 github：[https://github.com/AlanLee97/react-miui-clock](https://github.com/AlanLee97/react-miui-clock)
+
 预览：[http://alanlee.top/app/react-miui-clock/](http://alanlee.top/app/react-miui-clock/)
-![未命名码 (1).png](https://cdn.nlark.com/yuque/0/2023/png/743297/1700895394221-819ab3a0-894f-4e92-bd84-355479d55b98.png#averageHue=%23d2d2d2&clientId=u418f7524-cabf-4&from=drop&id=udad83f62&originHeight=400&originWidth=400&originalType=binary&ratio=1&rotation=0&showTitle=false&size=55214&status=done&style=none&taskId=u172a3869-a92b-4677-91c8-4f3c4b80e50&title=)
+
+![MIUI-CLOCK.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1700895394221-819ab3a0-894f-4e92-bd84-355479d55b98.png#averageHue=%23d2d2d2&clientId=u418f7524-cabf-4&from=drop&id=udad83f62&originHeight=400&originWidth=400&originalType=binary&ratio=1&rotation=0&showTitle=false&size=55214&status=done&style=none&taskId=u172a3869-a92b-4677-91c8-4f3c4b80e50&title=)
+
 ## 技术栈
 
 - React
 - React-Router-Dom
 - React-Redux
 - create-react-app
+
 ## 界面截图
 | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363925080-5cae5070-188b-4672-8210-960c3c8ae5dc.png#averageHue=%23f8f8f8&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=ua558d385&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=32966&status=done&style=none&taskId=u0194e81e-2d45-4b02-82fc-0232077f645&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363941133-96532ef8-e121-4ddb-bbf8-0a4f8ec4424a.png#averageHue=%23dfdfdf&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=ue6bb0346&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=36614&status=done&style=none&taskId=u4e034a49-5d85-45fe-aa48-5069b69565b&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363961695-e776b12f-ed3a-4caa-b22a-ff5c90cc74d4.png#averageHue=%23fbf9f7&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u94e1725f&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=41812&status=done&style=none&taskId=u8d86738e-5547-443e-80f7-711e19342d0&title=&width=386) |
 | --- | --- | --- |
