@@ -17,11 +17,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:rar": "react-app-rewired start",
-    "build:rar": "react-app-rewired build",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start:cra": "react-scripts start",
+    "build:cra": "react-scripts build",
+    "test:cra": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "lint": "eslint ./src/**/*.jsx --fix",
     "eject": "react-scripts eject"
   },
