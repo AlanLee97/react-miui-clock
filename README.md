@@ -1,13 +1,14 @@
 ## 简介
 我个人比较喜欢MIUI系统应用的简洁风格，所以有了想用前端技术模仿写一套APP的想法。
-
-> 应用部署在我的网站：[http://alanlee.top/app/react-miui-clock/](http://alanlee.top/app/react-miui-clock/)
-
+github：[https://github.com/AlanLee97/react-miui-clock](https://github.com/AlanLee97/react-miui-clock)
+预览：[http://alanlee.top/app/react-miui-clock/](http://alanlee.top/app/react-miui-clock/)
+![未命名码 (1).png](https://cdn.nlark.com/yuque/0/2023/png/743297/1700895394221-819ab3a0-894f-4e92-bd84-355479d55b98.png#averageHue=%23d2d2d2&clientId=u418f7524-cabf-4&from=drop&id=udad83f62&originHeight=400&originWidth=400&originalType=binary&ratio=1&rotation=0&showTitle=false&size=55214&status=done&style=none&taskId=u172a3869-a92b-4677-91c8-4f3c4b80e50&title=)
 ## 技术栈
 
 - React
 - React-Router-Dom
 - React-Redux
+- create-react-app
 ## 界面截图
 | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363925080-5cae5070-188b-4672-8210-960c3c8ae5dc.png#averageHue=%23f8f8f8&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=ua558d385&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=32966&status=done&style=none&taskId=u0194e81e-2d45-4b02-82fc-0232077f645&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363941133-96532ef8-e121-4ddb-bbf8-0a4f8ec4424a.png#averageHue=%23dfdfdf&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=ue6bb0346&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=36614&status=done&style=none&taskId=u4e034a49-5d85-45fe-aa48-5069b69565b&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686363961695-e776b12f-ed3a-4caa-b22a-ff5c90cc74d4.png#averageHue=%23fbf9f7&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u94e1725f&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=41812&status=done&style=none&taskId=u8d86738e-5547-443e-80f7-711e19342d0&title=&width=386) |
 | --- | --- | --- |
@@ -16,5 +17,9 @@
 | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364081782-11c6f860-fa0a-4950-b489-79f0d00740b0.png#averageHue=%23f6f6f5&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=ue72efa53&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=27406&status=done&style=none&taskId=uddb909dc-91f7-4e10-a60e-74851ce5ebf&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364114579-3586f703-b8ba-4b26-b015-be382c7b60a4.png#averageHue=%23cacaca&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=uae5d0c3d&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=34072&status=done&style=none&taskId=uba46a63f-f641-4e52-8e8e-60377bb0c4d&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364101997-eb49095f-aac2-4ba4-9a85-7bc56f5ecc98.png#averageHue=%23fdfcfc&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u0b53e9b3&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=24156&status=done&style=none&taskId=u27db8d0c-4ebd-4342-9da8-c15b9915e3b&title=&width=386) |
 | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364159710-f76876fd-e135-469c-929e-59d743a12bbb.png#averageHue=%23fbfbfa&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u72cef4f6&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=50433&status=done&style=none&taskId=ud21b63c8-b739-4210-a8f0-4322884e261&title=&width=386) | ![image.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1686364175882-712d0c2b-eecc-4214-a82a-e686e4ffc0c7.png#averageHue=%23fbfbfa&clientId=u1bf0fc41-93cd-4&from=paste&height=836&id=u8760d9e3&originHeight=836&originWidth=386&originalType=binary&ratio=1&rotation=0&showTitle=false&size=24241&status=done&style=none&taskId=u30306fcb-376b-49a5-9507-150e24d00f1&title=&width=386) |  |
 
+
 ## 其他
-后续会继续使用React写MIUI天气APP
+React-MIUI系列
+
+- MIUI时钟 [React-MIUI-Clock](https://github.com/AlanLee97/react-miui-clock)
+- MIUI天气 [React-MIUI-Weather](https://github.com/AlanLee97/react-miui-weather)
