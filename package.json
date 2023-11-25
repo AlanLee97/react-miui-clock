@@ -21,7 +21,9 @@
     "build:cra": "react-scripts build",
     "test:cra": "react-scripts test",
     "start": "react-app-rewired start",
+    "dev": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "analyzer": "react-app-rewired build --env analyzer",
     "test": "react-app-rewired test",
     "lint": "eslint ./src/**/*.jsx --fix",
     "eject": "react-scripts eject"
@@ -55,6 +57,7 @@
     "node-sass": "^8.0.0",
     "react-app-rewired": "^2.2.1",
     "sass": "^1.59.2",
+    "webpack-bundle-analyzer": "^4.10.1",
     "webpack-merge": "^5.10.0"
   }
 }
